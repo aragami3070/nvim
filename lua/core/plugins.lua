@@ -17,17 +17,8 @@ return require('packer').startup(function(use)
     -- use 'numirias/semshi' -- :UpdateRemotePlugins
     -- LSP Package Manager
     use {
-        {
-            "williamboman/mason.nvim",
-            opts = {
-                ensure_installed = {
-                    "mypy",
-                    "ruff",
-                    "pyright"
-                }
-            }
-        },
-        "williamboman/mason-lspconfig.nvim",
+         "williamboman/mason.nvim",
+        Build = ":MasonUpdate"
     }
     -- Native LSP configuration
     use {
