@@ -1,7 +1,4 @@
-
-
 local cmp = require'cmp'
-
   cmp.setup({
     snippet = {
       -- REQUIRED - you must specify a snippet engine
@@ -36,8 +33,7 @@ local cmp = require'cmp'
         else
             fallback()
         end
-      end, {"i","s"}),
-       
+      end, {"i","s"}), 
     }),
     sources = cmp.config.sources({
       { name = 'nvim_lsp' },
@@ -98,5 +94,3 @@ local cmp = require'cmp'
   require('lspconfig')['svelte'].setup {
     capabilities = capabilities
   }
-
-
