@@ -67,11 +67,16 @@ return require('packer').startup(function(use)
     use 'lewis6991/gitsigns.nvim'
     -- Commenting
     use 'tpope/vim-commentary'
+
+    use "folke/todo-comments.nvim"
+    use "terrortylor/nvim-comment"
+    --Debug adapter protocol
+    use 'mfussenegger/nvim-dap'
     -- File explorer
     use {
         "nvim-neo-tree/neo-tree.nvim",
         branch = "v3.x",
-        requires = { 
+        requires = {
             "nvim-lua/plenary.nvim",
             "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
             "MunifTanjim/nui.nvim",-- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information

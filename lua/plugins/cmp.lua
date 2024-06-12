@@ -94,3 +94,6 @@ local cmp = require'cmp'
   require('lspconfig')['svelte'].setup {
     capabilities = capabilities
   }
+  --require('lspconfig')['ltex'].setup {
+    --capabilities = capabilities
+  --}
