@@ -1,6 +1,10 @@
 
 vim.api.nvim_set_keymap('n', '<space>o', ':Telescope find_files<CR>', { noremap = true, silent = true })
 
+-- NOTE: if you want this grep, you need install ripgrep https://github.com/BurntSushi/ripgrep?tab=readme-ov-file#installation
+
+vim.api.nvim_set_keymap('n', '<space>l', ':Telescope live_grep<CR>', {silent = true })
+
 --Added neo-tree short cut
 vim.keymap.set("n", "<space>d", ":Neotree right<CR>") -- toggle file explorer
 vim.keymap.set("n", "<space>r", ":Neotree close<CR>") -- toggle file explorer

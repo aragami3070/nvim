@@ -17,5 +17,5 @@ vim.api.nvim_set_hl(0, "SignColumn", { bg = "none" })
      -- hue_6         = {"#d19a66", 247, "hue_6"}   -- hsl( 29, 54%, 61%);
      -- hue_6_2       = {"#e5c07b", 180, "hue_6_2"} -- hsl( 39, 67%, 69%);
 
--- NOTE(nrydanov) Temporary treesitter fix
+-- NOTE:(nrydanov) Temporary treesitter fix
 vim.api.nvim_set_hl(0, "@variable", { fg = "#e5c07b" })
