@@ -24,6 +24,7 @@ require('plugins.cmp')
 require('plugins.nvim-comment')
 require('plugins.gitsigns')
 require('plugins.lualine')
+require('plugins.toggleterm')
 
 --local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
 --parser_config.latex = {

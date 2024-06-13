@@ -65,9 +65,13 @@ return require('packer').startup(function(use)
     }
     -- Git integration
     use 'lewis6991/gitsigns.nvim'
+    use 'tpope/vim-fugitive'
+    use 'rbong/vim-flog'
     -- Commenting
     use 'tpope/vim-commentary'
-
+    --Terminal
+    use "akinsho/toggleterm.nvim"
+    --Comments and ToDo comments 
     use "folke/todo-comments.nvim"
     use "terrortylor/nvim-comment"
     --Debug adapter protocol
