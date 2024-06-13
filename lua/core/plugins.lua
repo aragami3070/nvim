@@ -67,6 +67,7 @@ return require('packer').startup(function(use)
     use 'lewis6991/gitsigns.nvim'
     use 'tpope/vim-fugitive'
     use 'rbong/vim-flog'
+    use "sindrets/diffview.nvim"
     -- Commenting
     use 'tpope/vim-commentary'
     --Terminal

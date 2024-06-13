@@ -17,3 +17,5 @@ end, { desc = "Previous todo comment" })
 
 vim.keymap.set("n", "<space>gt", ":Flog<CR>") -- git tree
 
+--Added new out from insert mode
+vim.keymap.set('i', ':;', '<Esc>')
