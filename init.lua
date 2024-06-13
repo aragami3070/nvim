@@ -1,4 +1,4 @@
---Basic 
+
 
 require('core.plugins')
 require('core.set')
@@ -25,7 +25,15 @@ require('plugins.nvim-comment')
 require('plugins.gitsigns')
 require('plugins.lualine')
 require('plugins.toggleterm')
+-- TODO: do todo com 
+-- FIX: do fix com 
+-- WARNING: do warning com
+-- NOTE: do note com
+-- HACK: do hack com
+-- PERF: do perf com 
+require('plugins.todo-comments')
 
+--require('plugins.diffview')
 --local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
 --parser_config.latex = {
   --install_info = {
