@@ -68,6 +68,8 @@ return require('packer').startup(function(use)
     use 'tpope/vim-fugitive'
     use 'rbong/vim-flog'
     use "sindrets/diffview.nvim"
+    --VimTex
+    use 'lervag/vimtex'
     -- Commenting
     use 'tpope/vim-commentary'
     --Terminal
