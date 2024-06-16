@@ -1,3 +1,6 @@
+-- Added leader button == space
+vim.g.mapleader = " "
+
 
 vim.api.nvim_set_keymap('n', '<space>o', ':Telescope find_files<CR>', { noremap = true, silent = true })
 
@@ -15,3 +18,14 @@ vim.keymap.set("n", "<space>gt", ":Flog<CR>") -- git tree
 
 --Added new out from insert mode
 vim.keymap.set('i', ':;', '<Esc>')
+
+-- Added bufferline keymaps
+vim.keymap.set('n', '<Tab>', ':BufferLineCycleNext<CR>')
+vim.keymap.set('n', '<s-Tab>', ':BufferLineCyclePrev<CR>')
+vim.keymap.set('n', '<space>x', ':BufferLinePickClose<CR>')
+
+-- Added diffview keymaps
+
+vim.keymap.set("n", "<space>go", ":DiffviewOpen<CR>")
+vim.keymap.set("n", "<space>gc", ":DiffviewClose<CR>")
+vim.keymap.set("n", "<space>gh", ":DiffviewFileHistory<CR>")

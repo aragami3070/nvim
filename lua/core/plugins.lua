@@ -77,6 +77,8 @@ return require('packer').startup(function(use)
     --Comments and ToDo comments 
     use "folke/todo-comments.nvim"
     use "terrortylor/nvim-comment"
+    -- bufferline
+    use "akinsho/bufferline.nvim"
     --Debug adapter protocol
     use 'mfussenegger/nvim-dap'
     -- File explorer
