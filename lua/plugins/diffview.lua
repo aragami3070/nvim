@@ -1,3 +1,3 @@
 require('diffview').setup({
-    
+
 })
