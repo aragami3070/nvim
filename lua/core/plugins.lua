@@ -94,7 +94,7 @@ return require('packer').startup(function(use)
         }
     }
    -- Colorscheme
-    use 'nrydanov/one-nvim'
+    use 'aragami3070/one-nvim'
     use "rebelot/kanagawa.nvim"
     -- Misc
     use 'lukas-reineke/indent-blankline.nvim'
