@@ -81,6 +81,8 @@ return require('packer').startup(function(use)
     use "akinsho/bufferline.nvim"
     --Debug adapter protocol
     use 'mfussenegger/nvim-dap'
+    -- colorizer #color highlighting
+    use 'norcalli/nvim-colorizer.lua'
     -- File explorer
     use {
         "nvim-neo-tree/neo-tree.nvim",

@@ -29,7 +29,9 @@ require('plugins.lualine')
 -- Added plugin that add bufferline in nvim
 require('plugins.bufferline')
 
-
+-- Added plugin that highlighting hex color
+require('plugins.colorizer')
+-- #60f
 -- Added plugin that open terminal in nvim
 require('plugins.toggleterm')
 -- TODO: do todo com 
