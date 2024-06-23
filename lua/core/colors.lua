@@ -10,4 +10,4 @@ vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 vim.api.nvim_set_hl(0, "SignColumn", { bg = "none" })
 
 -- NOTE:(nrydanov) Temporary treesitter fix
-vim.api.nvim_set_hl(0, "@variable", { fg = "#bb00ff" })
+vim.api.nvim_set_hl(0, "@variable", { fg = "#98c379" })
