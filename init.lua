@@ -45,8 +45,3 @@ require('plugins.todo-comments')
 -- Added git plugins 
 require('plugins.gitsigns')
 require('plugins.diffview')
-
-
-
-
-

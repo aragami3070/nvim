@@ -9,9 +9,9 @@ vim.api.nvim_set_keymap('n', '<space>o', ':Telescope find_files<CR>', { noremap 
 vim.api.nvim_set_keymap('n', '<space>l', ':Telescope live_grep<CR>', {silent = true })
 
 --Added neo-tree short cut
-vim.keymap.set("n", "<space>d", ":Neotree right<CR>") -- toggle file explorer
-vim.keymap.set("n", "<space>r", ":Neotree close<CR>") -- toggle file explorer
-vim.keymap.set("n", "<space>gs", ":Neotree git_status<CR>") -- toggle file explorer
+vim.keymap.set("n", "<space>f", ":Neotree right<CR>")
+vim.keymap.set("n", "<space>r", ":Neotree close<CR>")
+vim.keymap.set("n", "<space>gs", ":Neotree git_status<CR>")
 
 -- Added open git tree
 vim.keymap.set("n", "<space>gt", ":Flog<CR>") -- git tree
@@ -29,3 +29,12 @@ vim.keymap.set('n', '<space>x', ':BufferLinePickClose<CR>')
 vim.keymap.set("n", "<space>go", ":DiffviewOpen<CR>")
 vim.keymap.set("n", "<space>gc", ":DiffviewClose<CR>")
 vim.keymap.set("n", "<space>gh", ":DiffviewFileHistory<CR>")
+
+-- TODO: add dap for c++
+-- TODO: add dap for kotlin
+-- TODO: add dap for c#
+
+-- Added dap keymaps
+-- vim.keymap.set("n", "<space>db", ":DapToggleBreakpoint<CR>")
+-- vim.keymap.set("n", "<space>dc", ":DapContinue<CR>")
+
