@@ -38,9 +38,12 @@ vim.opt.shiftwidth = 4
 --Added copy in main buffer
 vim.api.nvim_set_option("clipboard", "unnamedplus")
 
-
 vim.cmd('autocmd VimLeave * :set guicursor=a:ver25-blinkon10')
 
 --Added norelateve number in insert mode
 vim.cmd('autocmd InsertEnter * :set norelativenumber')
 vim.cmd('autocmd InsertLeave * :set relativenumber')
+
+-- Added space = '·', tab = '| '
+vim.opt.listchars = { space = '·', tab = '| '}
+vim.opt.list = true
