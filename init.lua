@@ -1,4 +1,5 @@
-
+-- Added leader button == space
+vim.g.mapleader = " "
 
 require('core.plugins')
 require('core.set')
@@ -45,3 +46,6 @@ require('plugins.todo-comments')
 -- Added git plugins 
 require('plugins.gitsigns')
 require('plugins.diffview')
+
+require('plugins.nvim-dap-c++')
+require('plugins.nvim-dap-ui')
