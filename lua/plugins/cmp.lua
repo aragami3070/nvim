@@ -33,7 +33,7 @@ local cmp = require'cmp'
         else
             fallback()
         end
-      end, {"i","s"}), 
+      end, {"i","s"}),
     }),
     sources = cmp.config.sources({
       { name = 'nvim_lsp' },
@@ -92,6 +92,9 @@ local cmp = require'cmp'
     capabilities = capabilities
   }
   require('lspconfig')['svelte'].setup {
+    capabilities = capabilities
+  }
+  require('lspconfig')['csharp_ls'].setup {
     capabilities = capabilities
   }
   --require('lspconfig')['ltex'].setup {

@@ -1,5 +1,5 @@
 require "nvim-treesitter.configs".setup {
-    ensure_installed = { 'cpp', 'kotlin', 'svelte', 'lua', 'python'},--, 'latex' },
+    ensure_installed = { 'cpp', 'c_sharp', 'kotlin', 'svelte', 'lua', 'python'},--, 'latex' },
     sync_install = false,
     highlight = {
         enable = true,
