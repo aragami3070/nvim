@@ -97,11 +97,6 @@ return require('packer').startup(function(use)
     -- bufferline
     use "akinsho/bufferline.nvim"
 
-    --Debug adapter protocol
-    -- TODO: add dap & dap ui & etc
-    -- FIX: may be good setup here https://github.com/SteveWolligandt/dotfiles/tree/master
-    -- use 'mfussenegger/nvim-dap'
-
     -- colorizer #color highlighting
     use 'norcalli/nvim-colorizer.lua'
 
@@ -125,6 +120,103 @@ return require('packer').startup(function(use)
             "nvim-lua/plenary.nvim",
             "mfussenegger/nvim-dap",
         }
+    }
+
+    -- NOTE: DON'T CHANGE  PLS
+    --Debug adapter protocol
+    use 'mfussenegger/nvim-dap'
+
+    use {
+        "mfussenegger/nvim-dap",
+        recommended = true,
+        desc = "Debugging support. Requires language specific adapters to be configured. (see lang extras)",
+
+        dependencies = {
+            "rcarriga/nvim-dap-ui",
+            -- virtual text for the debugger
+            {
+                "theHamsta/nvim-dap-virtual-text",
+                opts = {},
+            },
+        },
+
+        config = function()
+
+        vim.api.nvim_set_hl(0, "DapStoppedLine", { default = true, link = "Visual" })
+
+    -- setup dap config by VsCode launch.json file
+        local vscode = require("dap.ext.vscode")
+        local json = require("plenary.json")
+        vscode.json_decode = function(str)
+        return vim.json.decode(json.json_strip_comments(str))
+        end
+    end,
+    }
+
+    use {
+        "rcarriga/nvim-dap-ui",
+        -- virtual text for the debugger
+        {
+            "theHamsta/nvim-dap-virtual-text",
+            opts = {},
+        },
+    }
+
+    use {
+        "theHamsta/nvim-dap-virtual-text",
+        opts = {},
+    }
+
+    use {
+        "rcarriga/nvim-dap-ui",
+        dependencies = {
+            "nvim-neotest/nvim-nio",
+            "theHamsta/nvim-dap-virtual-text",
+        },
+        -- stylua: ignore
+        opts = {},
+        config = function(_, opts)
+            local dap = require("dap")
+            local dapui = require("dapui")
+            dapui.setup(opts)
+            dap.listeners.after.event_initialized["dapui_config"] = function()
+                dapui.open({})
+            end
+            dap.listeners.before.event_terminated["dapui_config"] = function()
+                dapui.close({})
+            end
+            dap.listeners.before.event_exited["dapui_config"] = function()
+                dapui.close({})
+            end
+        end,
+    }
+
+    use {
+        "nvim-neotest/nvim-nio"
+    }
+
+    use {
+        "jay-babu/mason-nvim-dap.nvim",
+        dependencies = "mason.nvim",
+        cmd = { "DapInstall", "DapUninstall" },
+        opts = {
+    -- Makes a best effort to setup the various debuggers with
+    -- reasonable debug configurations
+            automatic_installation = true,
+
+    -- You can provide additional configuration to the handlers,
+    -- see mason-nvim-dap README for more information
+            handlers = {},
+
+    -- You'll need to check that you have the required things installed
+    -- online, please don't ask me how to install them :)
+            ensure_installed = {
+      -- Update this to ensure that you have the debuggers for the langs you want
+            },
+        },
+  -- mason-nvim-dap is loaded when nvim-dap loads
+        config = function()
+        end,
     }
 
     if packer then
