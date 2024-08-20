@@ -77,14 +77,22 @@ local cmp = require'cmp'
   })
 
   -- Set up lspconfig.
+  local navic = require("nvim-navic")
   local capabilities = require('cmp_nvim_lsp').default_capabilities()
   -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
   require('lspconfig')['clangd'].setup {
-    capabilities = capabilities
+    capabilities = capabilities,
+    on_attach = function(client, bufnr)
+        navic.attach(client, bufnr)
+    end
   }
 
   require('lspconfig')['omnisharp'].setup {
-    capabilities = capabilities
+    capabilities = capabilities,
+    on_attach = function(client, bufnr)
+        navic.attach(client, bufnr)
+    end
+
   }
 
   require('lspconfig')['kotlin_language_server'].setup {
@@ -96,10 +104,18 @@ local cmp = require'cmp'
   -- }
 
   require('lspconfig')['lua_ls'].setup {
-    capabilities = capabilities
+    capabilities = capabilities,
+    on_attach = function(client, bufnr)
+        navic.attach(client, bufnr)
+    end
+
   }
 
   require('lspconfig')['svelte'].setup {
-    capabilities = capabilities
+    capabilities = capabilities,
+    on_attach = function(client, bufnr)
+        navic.attach(client, bufnr)
+    end
+
   }
 

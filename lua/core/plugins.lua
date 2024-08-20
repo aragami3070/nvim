@@ -104,6 +104,26 @@ return require('packer').startup(function(use)
     -- bufferline
     use "akinsho/bufferline.nvim"
 
+    -- nvim-navic line 
+    use {
+        "SmiteshP/nvim-navic",
+        requires = "neovim/nvim-lspconfig"
+    }
+
+    -- barbecue (extended nvim-navic)
+    use({
+        "utilyre/barbecue.nvim",
+        tag = "*",
+        requires = {
+            "SmiteshP/nvim-navic",
+            "nvim-tree/nvim-web-devicons", -- optional dependency
+        },
+        after = "nvim-web-devicons", -- keep this if you're using NvChad
+        config = function()
+            require("barbecue").setup()
+        end,
+    })
+
     -- colorizer #color highlighting
     use 'norcalli/nvim-colorizer.lua'
 
