@@ -124,6 +124,8 @@ return require('packer').startup(function(use)
         end,
     })
 
+    use "petertriho/nvim-scrollbar"
+
     -- colorizer #color highlighting
     use 'norcalli/nvim-colorizer.lua'
 

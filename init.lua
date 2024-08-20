@@ -45,6 +45,9 @@ require('plugins.todo-comments')
 -- Added nvim-surround
 require("plugins.nvim-surround")
 
+-- Added nvim-scrollbar plagin
+require("plugins.nvim-scrollbar")
+
 -- Added git plugins 
 require('plugins.gitsigns')
 require('plugins.diffview')
