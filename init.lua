@@ -6,7 +6,6 @@ require('core.set')
 require('core.colors')
 require('core.keymaps')
 
-
 --Plugins
 
 --Added plugin that add corect 
@@ -42,6 +41,9 @@ require('plugins.toggleterm')
 -- HACK: do hack com
 -- PERF: do perf com 
 require('plugins.todo-comments')
+
+-- Added nvim-surround
+require("plugins.nvim-surround")
 
 -- Added git plugins 
 require('plugins.gitsigns')

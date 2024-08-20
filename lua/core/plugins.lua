@@ -19,7 +19,11 @@ return require('packer').startup(function(use)
     -- LSP Package Manager
     use {
          "williamboman/mason.nvim",
-        Build = ":MasonUpdate"
+         Build = ":MasonUpdate",
+    }
+
+    use {
+        "williamboman/mason-lspconfig.nvim"
     }
 
     -- Native LSP configuration
@@ -30,6 +34,9 @@ return require('packer').startup(function(use)
     -- Completion
     use {
         'hrsh7th/nvim-cmp',
+        'hrsh7th/vim-vsnip',
+        'hrsh7th/vim-vsnip-integ',
+        'hrsh7th/cmp-vsnip',
         'hrsh7th/cmp-nvim-lsp',
         'hrsh7th/cmp-buffer',
         'hrsh7th/cmp-path',
@@ -120,6 +127,11 @@ return require('packer').startup(function(use)
             "nvim-lua/plenary.nvim",
             "mfussenegger/nvim-dap",
         }
+    }
+
+    use {
+        "kylechui/nvim-surround",
+        tag = "*"
     }
 
     -- NOTE: DON'T CHANGE  PLS

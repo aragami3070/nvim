@@ -38,7 +38,7 @@ local cmp = require'cmp'
     sources = cmp.config.sources({
       { name = 'nvim_lsp' },
       { name = 'vsnip' }, -- For vsnip users.
-      -- { name = 'luasnip' }, -- For luasnip users.
+      { name = 'luasnip' }, -- For luasnip users.
       -- { name = 'ultisnips' }, -- For ultisnips users.
       -- { name = 'snippy' }, -- For snippy users.
     }, {
@@ -82,21 +82,24 @@ local cmp = require'cmp'
   require('lspconfig')['clangd'].setup {
     capabilities = capabilities
   }
+
+  require('lspconfig')['omnisharp'].setup {
+    capabilities = capabilities
+  }
+
   require('lspconfig')['kotlin_language_server'].setup {
     capabilities = capabilities
   }
-  require('lspconfig')['pyright'].setup {
-    capabilities = capabilities
-  }
+
+  -- require('lspconfig')['pyright'].setup {
+  --   capabilities = capabilities
+  -- }
+
   require('lspconfig')['lua_ls'].setup {
     capabilities = capabilities
   }
+
   require('lspconfig')['svelte'].setup {
     capabilities = capabilities
   }
-  require('lspconfig')['csharp_ls'].setup {
-    capabilities = capabilities
-  }
-  --require('lspconfig')['ltex'].setup {
-    --capabilities = capabilities
-  --}
+
