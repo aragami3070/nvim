@@ -1,38 +1,47 @@
-local ensure_packer = function()
-    local fn = vim.fn
-    local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
-    if fn.empty(fn.glob(install_path)) > 0 then
-        fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path })
-        vim.cmd [[packadd packer.nvim]]
-        return true
-    end
-    return false
+-- Bootstrap lazy.nvim
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not (vim.uv or vim.loop).fs_stat(lazypath) then
+  local lazyrepo = "https://github.com/folke/lazy.nvim.git"
+  local out = vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
+  if vim.v.shell_error ~= 0 then
+    vim.api.nvim_echo({
+      { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
+      { out, "WarningMsg" },
+      { "\nPress any key to exit..." },
+    }, true, {})
+    vim.fn.getchar()
+    os.exit(1)
+  end
 end
+vim.opt.rtp:prepend(lazypath)
 
-local packer = ensure_packer()
+-- Make sure to setup `mapleader` and `maplocalleader` before
+-- loading lazy.nvim so that mappings are correct.
+-- This is also a good place to setup other settings (vim.opt)
+vim.g.mapleader = " "
+vim.g.maplocalleader = "\\"
 
-return require('packer').startup(function(use)
-    -- Vim Package Manager
-    use 'wbthomason/packer.nvim'
-    -- use 'numirias/semshi' -- :UpdateRemotePlugins
+-- Setup lazy.nvim
+require("lazy").setup({
+  spec = {
 
     -- LSP Package Manager
-    use {
+    {
          "williamboman/mason.nvim",
          Build = ":MasonUpdate",
-    }
+    },
 
-    use {
+    {
         "williamboman/mason-lspconfig.nvim"
-    }
+    },
 
     -- Native LSP configuration
-    use {
+    {
         'neovim/nvim-lspconfig',
-    }
+    },
 
     -- Completion
-    use {
+    {
         'hrsh7th/nvim-cmp',
         'hrsh7th/vim-vsnip',
         'hrsh7th/vim-vsnip-integ',
@@ -41,126 +50,126 @@ return require('packer').startup(function(use)
         'hrsh7th/cmp-buffer',
         'hrsh7th/cmp-path',
         'hrsh7th/cmp-cmdline'
-    }
+    },
 
     -- Fuzzy search
-    use {
-        'nvim-telescope/telescope.nvim', tag = '0.1.5',
+    {
+        'nvim-telescope/telescope.nvim', version = '0.1.5',
         -- or                            , branch = '0.1.x',
-        requires = { { 'nvim-lua/plenary.nvim' } }
-    }
+        dependencies = { { 'nvim-lua/plenary.nvim' } }
+    },
 
     -- Non-LSP actions and more
-    use {
+    {
         'nvimtools/none-ls.nvim',
-    }
+    },
 
     -- LSP: Snippets
-    use {
+    {
         'L3MON4D3/LuaSnip',
         'saadparwaiz1/cmp_luasnip',
-    }
+    },
 
     -- LSP signature pop-up
-    use 'ray-x/lsp_signature.nvim'
+    {'ray-x/lsp_signature.nvim'},
 
     -- Syntax highlighting
-    use {
+    {
         'nvim-treesitter/nvim-treesitter',
-        run = ':TSUpdate'
-    }
+        build = ':TSUpdate'
+    },
 
     -- Pairing brackets
-    use 'windwp/nvim-autopairs'
+    {'windwp/nvim-autopairs'},
 
     -- Colorscheme colors retrieval
-    use 'psliwka/termcolors.nvim'
+    {'psliwka/termcolors.nvim'},
 
     -- Status line
-    use {
+    {
         'nvim-lualine/lualine.nvim',
-        requires = 'nvim-tree/nvim-web-devicons'
-    }
+        dependencies = 'nvim-tree/nvim-web-devicons'
+    },
 
     -- Git integration
-    use 'lewis6991/gitsigns.nvim'
-    use 'tpope/vim-fugitive'
-    use 'rbong/vim-flog'
-    use "sindrets/diffview.nvim"
+    {'lewis6991/gitsigns.nvim'},
+    {'tpope/vim-fugitive'},
+    {'rbong/vim-flog'},
+    {"sindrets/diffview.nvim"},
 
     --VimTex
-    use 'lervag/vimtex'
+    {'lervag/vimtex'},
 
     -- Commenting
-    use 'tpope/vim-commentary'
+    {'tpope/vim-commentary'},
 
     --Terminal
-    use "akinsho/toggleterm.nvim"
+    {"akinsho/toggleterm.nvim"},
 
     --Comments and ToDo comments 
-    use "folke/todo-comments.nvim"
-    use "terrortylor/nvim-comment"
+    {"folke/todo-comments.nvim"},
+    {"terrortylor/nvim-comment"},
 
     -- bufferline
-    use "akinsho/bufferline.nvim"
+    {"akinsho/bufferline.nvim"},
 
     -- nvim-navic line 
-    use {
+    {
         "SmiteshP/nvim-navic",
-        requires = "neovim/nvim-lspconfig"
-    }
+        dependencies = "neovim/nvim-lspconfig"
+    },
 
     -- barbecue (extended nvim-navic)
-    use({
+    {
         "utilyre/barbecue.nvim",
-        tag = "*",
-        requires = {
+        name = "barbecue",
+        version = "*",
+        dependencies = {
             "SmiteshP/nvim-navic",
             "nvim-tree/nvim-web-devicons", -- optional dependency
         },
-        after = "nvim-web-devicons", -- keep this if you're using NvChad
-        config = function()
-            require("barbecue").setup()
-        end,
-    })
+        opts = {
 
-    use "petertriho/nvim-scrollbar"
+        }
+    },
+
+    {"petertriho/nvim-scrollbar"},
 
     -- colorizer #color highlighting
-    use 'norcalli/nvim-colorizer.lua'
+    {'norcalli/nvim-colorizer.lua'},
 
     -- File explorer
-    use {
+    {
         "nvim-neo-tree/neo-tree.nvim",
         branch = "v3.x",
-        requires = {
+        dependencies = {
             "nvim-lua/plenary.nvim",
             "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
             "MunifTanjim/nui.nvim",-- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
         }
-    }
+    },
 
    -- Colorscheme
-    use 'aragami3070/one-nvim'
+    {'aragami3070/one-nvim'},
 
-    use {
+    {
         "scalameta/nvim-metals",
-        requires = {
+        dependencies = {
             "nvim-lua/plenary.nvim",
             "mfussenegger/nvim-dap",
         }
-    }
+    },
 
-    use {
+    {
         "kylechui/nvim-surround",
-        tag = "*"
-    }
+        version = "*", -- Use for stability; omit to use `main` branch for the latest featuresevent
+    },
 
     -- NOTE: DON'T CHANGE  PLS
     --Debug adapter protocol
-    use 'mfussenegger/nvim-dap'
+    {'mfussenegger/nvim-dap'},
 
-    use {
+    {
         "mfussenegger/nvim-dap",
         recommended = true,
         desc = "Debugging support. Requires language specific adapters to be configured. (see lang extras)",
@@ -185,23 +194,23 @@ return require('packer').startup(function(use)
         return vim.json.decode(json.json_strip_comments(str))
         end
     end,
-    }
+    },
 
-    use {
+    {
         "rcarriga/nvim-dap-ui",
         -- virtual text for the debugger
         {
             "theHamsta/nvim-dap-virtual-text",
             opts = {},
         },
-    }
+    },
 
-    use {
+    {
         "theHamsta/nvim-dap-virtual-text",
         opts = {},
-    }
+    },
 
-    use {
+    {
         "rcarriga/nvim-dap-ui",
         dependencies = {
             "nvim-neotest/nvim-nio",
@@ -223,13 +232,13 @@ return require('packer').startup(function(use)
                 dapui.close({})
             end
         end,
-    }
+    },
 
-    use {
+    {
         "nvim-neotest/nvim-nio"
-    }
+    },
 
-    use {
+    {
         "jay-babu/mason-nvim-dap.nvim",
         dependencies = "mason.nvim",
         cmd = { "DapInstall", "DapUninstall" },
@@ -252,8 +261,11 @@ return require('packer').startup(function(use)
         config = function()
         end,
     }
+  },
+  -- Configure any other settings here. See the documentation for more details.
+  -- colorscheme that will be used when installing plugins.
+  -- install = { colorscheme = { "habamax" } },
+  -- automatically check for plugin updates
+  checker = { enabled = true },
+})
 
-    if packer then
-        require('packer').sync()
-    end
-end)
