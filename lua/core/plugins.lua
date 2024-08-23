@@ -134,6 +134,47 @@ require("lazy").setup({
     },
 
     {"petertriho/nvim-scrollbar"},
+ {"folke/which-key.nvim",
+  event = "VeryLazy",
+  opts_extend = { "spec" },
+  opts = {
+    defaults = {},
+    spec = {
+      {
+        mode = { "n" },
+        { "<leader>c", group = "Comments" },
+        { "<leader>g", group = "git" },
+        { "[", group = "prev" },
+        { "]", group = "next" },
+        { "g", group = "goto" },
+        { "z", group = "fold" },
+        {"<space>cl", desc = "Comment line"},
+        {"<space>c", desc = "Comment highlighted lines"},
+        {
+          "<leader>w",
+          group = "windows",
+          proxy = "<c-w>",
+          expand = function()
+            return require("which-key.extras").expand.win()
+          end,
+        },
+      },
+    },
+  },
+  keys = {
+    {
+      "<leader>",
+      function()
+        require("which-key").show({ keys = "<space>", loop = false, global = true })
+      end,
+      desc = "Space Keymaps",
+    },
+  },
+  config = function(_, opts)
+    local wk = require("which-key")
+    wk.setup(opts)
+  end,
+},
 
     -- colorizer #color highlighting
     {'norcalli/nvim-colorizer.lua'},
