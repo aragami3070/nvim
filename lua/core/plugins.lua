@@ -70,6 +70,20 @@ require("lazy").setup({
         'saadparwaiz1/cmp_luasnip',
     },
 
+    {
+        "rmagatti/goto-preview",
+        event = "BufEnter",
+        config = true, -- necessary as per https://github.com/rmagatti/goto-preview/issues/88
+        keys = {
+                -- NOTE: Added goto-preview keymaps (best plugin ever)
+                { '<space>pd', function() require("goto-preview").goto_preview_definition() end, { desc = "Preview Definition", silent = true } },
+                { '<space>pt', function() require("goto-preview").goto_preview_type_definition() end, { desc = "Preview Type Definition", silent = true } },
+                { '<space>pi', function() require("goto-preview").goto_preview_type_definition() end, { desc = "Preview Implementation", silent = true } },
+                { '<space>pr', function() require("goto-preview").goto_preview_references() end, { desc = "Preview References", silent = true } },
+                { '<space>pc', function() require("goto-preview").close_all_win() end, { desc = "Close Previews", silent = true } },
+            }
+    },
+
     -- LSP signature pop-up
     {'ray-x/lsp_signature.nvim'},
 
@@ -146,10 +160,16 @@ require("lazy").setup({
         { "<leader>g", group = "git" },
         { "[", group = "prev" },
         { "]", group = "next" },
-        { "g", group = "goto" },
+        { "<space>p", group = "goto-preview" },
+        { "<space>d", group = "debugger" },
         { "z", group = "fold" },
-        {"<space>cl", desc = "Comment line"},
-        {"<space>c", desc = "Comment highlighted lines"},
+        { "<space>cl", desc = "Comment line"},
+        { "<space>c", desc = "Comment highlighted lines"},
+        { '<space>pd',  desc = "Preview Definition" },
+        { '<space>pt',  desc = "Preview Type Definition" },
+        { '<space>pi',  desc = "Preview Implementation" },
+        { '<space>pr',  desc = "Preview References" },
+        { '<space>pc',  desc = "Close Previews" },
         {
           "<leader>w",
           group = "windows",
