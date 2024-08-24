@@ -53,4 +53,5 @@ require('plugins.gitsigns')
 require('plugins.diffview')
 
 require('plugins.nvim-dap-c++')
+require('plugins.nvim-dap-c#')
 require('plugins.nvim-dap-ui')
