@@ -8,6 +8,8 @@ vim.api.nvim_set_keymap('n', '<space>o', ':Telescope find_files<CR>', { desc = "
 
 vim.api.nvim_set_keymap('n', '<space>l', ':Telescope live_grep<CR>', {desc = "Find file by text", silent = true })
 
+vim.api.nvim_set_keymap('n', '<space>gb', ':Telescope git_branches<CR>', {desc = "Choose git branhe", silent = true })
+
 -- NOTE: Added neo-tree short cut
 vim.keymap.set("n", "<space>f", ":Neotree right<CR>", {desc = "Open Neotree Window"})
 vim.keymap.set("n", "<space>r", ":Neotree close<CR>", {desc = "Close Neotree Window"})

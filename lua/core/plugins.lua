@@ -226,6 +226,12 @@ require("lazy").setup({
         version = "*", -- Use for stability; omit to use `main` branch for the latest featuresevent
     },
 
+    {
+        'nvimdev/dashboard-nvim',
+        event = 'VimEnter',
+        dependencies = { {'nvim-tree/nvim-web-devicons'}}
+    },
+
     -- NOTE: DON'T CHANGE  PLS
     --Debug adapter protocol
     {'mfussenegger/nvim-dap'},
