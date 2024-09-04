@@ -60,8 +60,8 @@ require('dashboard').setup {
                 icon_hl = 'Directory',
                 desc = 'Find text',
                 desc_hl = 'String',
-                key = 'w',
-                keymap = 'SPC f w',
+                key = 'l',
+                keymap = 'SPC l',
                 key_hl = 'Number',
                 action = ':Telescope live_grep'
             },
