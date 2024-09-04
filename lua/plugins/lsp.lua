@@ -1,6 +1,7 @@
 require'lspconfig'.clangd.setup{}
 require'lspconfig'.omnisharp.setup{}
-require'lspconfig'.kotlin_language_server.setup{}
+require'lspconfig'.texlab.setup{}
+-- require'lspconfig'.kotlin_language_server.setup{}
 require'lspconfig'.pyright.setup{}
 require'lspconfig'.lua_ls.setup{}
 require'lspconfig'.svelte.setup{}

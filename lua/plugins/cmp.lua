@@ -39,6 +39,7 @@ local cmp = require'cmp'
       { name = 'nvim_lsp' },
       { name = 'vsnip' }, -- For vsnip users.
       { name = 'luasnip' }, -- For luasnip users.
+      { name = 'nvim-cmp'},
       -- { name = 'ultisnips' }, -- For ultisnips users.
       -- { name = 'snippy' }, -- For snippy users.
     }, {
@@ -92,16 +93,25 @@ local cmp = require'cmp'
     on_attach = function(client, bufnr)
         navic.attach(client, bufnr)
     end
-
   }
 
-  require('lspconfig')['kotlin_language_server'].setup {
-    capabilities = capabilities
+  require('lspconfig')['texlab'].setup {
+    capabilities = capabilities,
+    on_attach = function(client, bufnr)
+        navic.attach(client, bufnr)
+    end
   }
 
-  -- require('lspconfig')['pyright'].setup {
+  -- require('lspconfig')['kotlin_language_server'].setup {
   --   capabilities = capabilities
   -- }
+
+  require('lspconfig')['pyright'].setup {
+    capabilities = capabilities,
+    on_attach = function(client, bufnr)
+        navic.attach(client, bufnr)
+    end
+  }
 
   require('lspconfig')['lua_ls'].setup {
     capabilities = capabilities,
