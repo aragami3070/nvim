@@ -93,6 +93,11 @@ require("lazy").setup({
         build = ':TSUpdate'
     },
 
+    -- Underscore selected function/var/etc in code
+    {
+        "RRethy/vim-illuminate"
+    },
+
     -- Pairing brackets
     {'windwp/nvim-autopairs'},
 
