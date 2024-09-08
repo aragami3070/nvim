@@ -98,6 +98,12 @@ require("lazy").setup({
         "RRethy/vim-illuminate"
     },
 
+    -- Rename plugin
+    {
+        "smjonas/inc-rename.nvim",
+        cmd = "IncRename",
+    },
+
     -- Pairing brackets
     {'windwp/nvim-autopairs'},
 

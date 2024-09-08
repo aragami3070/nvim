@@ -53,6 +53,9 @@ require("plugins.nvim-scrollbar")
 -- Added CMake highlighting
 require("plugins.CMake")
 
+-- Added rename plugin
+require("plugins.inc-rename")
+
 -- Added git plugins 
 require('plugins.gitsigns')
 require('plugins.diffview')
