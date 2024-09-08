@@ -50,6 +50,9 @@ require('plugins.dashboard-nvim')
 -- Added nvim-scrollbar plagin
 require("plugins.nvim-scrollbar")
 
+-- Added CMake highlighting
+require("plugins.CMake")
+
 -- Added git plugins 
 require('plugins.gitsigns')
 require('plugins.diffview')

@@ -102,6 +102,13 @@ local cmp = require'cmp'
     end
   }
 
+  require('lspconfig')['neocmake'].setup {
+    capabilities = capabilities,
+    on_attach = function(client, bufnr)
+        navic.attach(client, bufnr)
+    end
+  }
+
   -- require('lspconfig')['kotlin_language_server'].setup {
   --   capabilities = capabilities
   -- }
