@@ -109,11 +109,7 @@ local cmp = require'cmp'
     end
   }
 
-  -- require('lspconfig')['kotlin_language_server'].setup {
-  --   capabilities = capabilities
-  -- }
-
-  require('lspconfig')['pyright'].setup {
+  require('lspconfig')['markdown_oxide'].setup {
     capabilities = capabilities,
     on_attach = function(client, bufnr)
         navic.attach(client, bufnr)
@@ -134,5 +130,16 @@ local cmp = require'cmp'
         navic.attach(client, bufnr)
     end
 
+  }
+
+  -- require('lspconfig')['kotlin_language_server'].setup {
+  --   capabilities = capabilities
+  -- }
+
+  require('lspconfig')['pyright'].setup {
+    capabilities = capabilities,
+    on_attach = function(client, bufnr)
+        navic.attach(client, bufnr)
+    end
   }
 
