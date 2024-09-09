@@ -1,7 +1,7 @@
 -- NOTE: Added leader button == space
 vim.g.mapleader = " "
 
-
+-- NOTE: Added Telescope keymaps
 vim.api.nvim_set_keymap('n', '<space>o', ':Telescope find_files<CR>', { desc = "Find file by name", noremap = true, silent = true })
 
 -- NOTE: if you want this grep, you need install ripgrep https://github.com/BurntSushi/ripgrep?tab=readme-ov-file#installation
@@ -10,10 +10,18 @@ vim.api.nvim_set_keymap('n', '<space>l', ':Telescope live_grep<CR>', {desc = "Fi
 
 vim.api.nvim_set_keymap('n', '<space>gb', ':Telescope git_branches<CR>', {desc = "Choose git branhe", silent = true })
 
+
+
+
+
 -- NOTE: Added neo-tree short cut
 vim.keymap.set("n", "<space>f", ":Neotree right<CR>", {desc = "Open Neotree Window"})
 vim.keymap.set("n", "<space>r", ":Neotree close<CR>", {desc = "Close Neotree Window"})
 vim.keymap.set("n", "<space>gs", ":Neotree git_status<CR>", {desc = "Open Neotree git_status Window"})
+
+
+
+
 
 -- NOTE: Added move to window kelymaps <Ctrl> + h/j/k/l
 vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "Go to Left Window", remap = true })
@@ -21,28 +29,66 @@ vim.keymap.set("n", "<C-j>", "<C-w>j", { desc = "Go to Lower Window", remap = tr
 vim.keymap.set("n", "<C-k>", "<C-w>k", { desc = "Go to Upper Window", remap = true })
 vim.keymap.set("n", "<C-l>", "<C-w>l", { desc = "Go to Right Window", remap = true })
 
+
+
+
+
 -- NOTE: Added rename keymaps
 vim.keymap.set("n", "<space>nw", ":IncRename ", { desc = "Rename this"})
+
+
+
+
+
+-- NOTE: Added spectre (rename) keymaps
+vim.keymap.set('n', '<leader>so', '<cmd>lua require("spectre").toggle()<CR>', {
+    desc = "Toggle Spectre"
+})
+vim.keymap.set('n', '<leader>sw', '<cmd>lua require("spectre").open_visual({select_word=true})<CR>', {
+    desc = "Search current word"
+})
+vim.keymap.set('v', '<leader>sw', '<esc><cmd>lua require("spectre").open_visual()<CR>', {
+    desc = "Search current word"
+})
+vim.keymap.set('n', '<leader>sp', '<cmd>lua require("spectre").open_file_search({select_word=true})<CR>', {
+    desc = "Search on current file"
+})
+
+
+
+
 
 -- NOTE: Added open git tree
 vim.keymap.set("n", "<space>gt", ":Flog<CR>", { desc = "Open git tree" }) -- git tree
 
+
+
+
+
 -- NOTE: Added new out from insert mode
 vim.keymap.set('i', ':;', '<Esc>', { desc = "Out from i mode to n" })
+
+
+
+
 
 -- NOTE: Added bufferline keymaps
 vim.keymap.set('n', '<Tab>', ':BufferLineCycleNext<CR>', { desc = "Open next file in bufferline" })
 vim.keymap.set('n', '<s-Tab>', ':BufferLineCyclePrev<CR>', { desc = "Open prev file in bufferline" })
 vim.keymap.set('n', '<space>x', ':BufferLinePickClose<CR>', { desc = "Close file from bufferline" })
 
+
+
+
+
 -- NOTE: Added diffview keymaps
 vim.keymap.set("n", "<space>go", ":DiffviewOpen<CR>", { desc = "Open diffview with last commit" })
 vim.keymap.set("n", "<space>gc", ":DiffviewClose<CR>", { desc = "Close diffview" })
 vim.keymap.set("n", "<space>gh", ":DiffviewFileHistory<CR>", { desc = "Open file commit history" })
 
--- NOTE: Added dap for c++
--- TODO: add dap for kotlin
--- TODO: add dap for c#
+
+
+
 
 -- NOTE: Added dap keymaps
 vim.keymap.set("n", "<space>db", ":DapToggleBreakpoint<CR>", { desc = "Do break point" }) -- add|delete breakpoint on line 
