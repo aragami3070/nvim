@@ -1,4 +1,7 @@
-require("toggleterm").setup {open_mapping = [[<c-\>]]}
+require("toggleterm").setup {
+    open_mapping = [[<c-\>]],
+    shell = "/bin/zsh"
+}
 
 function _G.set_terminal_keymaps()
     local opts = {buffer = 0}
