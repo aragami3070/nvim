@@ -48,3 +48,5 @@ vim.cmd('autocmd InsertLeave * :set relativenumber')
 -- Added space = '·', tab = '| '
 vim.opt.listchars = { space = '·', tab = '| '}
 vim.opt.list = true
+
+vim.notify = require("notify")

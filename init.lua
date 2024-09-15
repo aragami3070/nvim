@@ -56,6 +56,12 @@ require("plugins.CMake")
 -- Added rename plugin
 require("plugins.inc-rename")
 
+-- Added pomo plugin (timer)
+require("plugins.pomo-nvim")
+
+-- Added notify
+require("plugins.notify")
+
 -- Added git plugins 
 require('plugins.gitsigns')
 require('plugins.diffview')

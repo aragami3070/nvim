@@ -174,6 +174,7 @@ require("lazy").setup({
     },
 
     {"petertriho/nvim-scrollbar"},
+
  {"folke/which-key.nvim",
   event = "VeryLazy",
   opts_extend = { "spec" },
@@ -222,6 +223,17 @@ require("lazy").setup({
   end,
 },
 
+{
+  "epwalsh/pomo.nvim",
+  version = "*",  -- Recommended, use latest release instead of latest commit
+  lazy = true,
+  cmd = { "TimerStart", "TimerRepeat", "TimerSession" },
+  dependencies = {
+    -- Optional, but highly recommended if you want to use the "Default" timer
+    "rcarriga/nvim-notify",
+  },
+},
+        { 'rcarriga/nvim-notify' },
     -- colorizer #color highlighting
     {'norcalli/nvim-colorizer.lua'},
 

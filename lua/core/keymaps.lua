@@ -90,6 +90,19 @@ vim.keymap.set("n", "<space>gh", ":DiffviewFileHistory<CR>", { desc = "Open file
 
 
 
+-- NOTE: Added pomo (timer) keymaps
+vim.keymap.set("n", "<space>tse", ":TimerSession<CR>", { desc = "Start Timer Session" })
+vim.keymap.set("n", "<space>tsta", ":TimerStart", { desc = "Timer Start (choose time)" })
+vim.keymap.set("n", "<space>tp", ":TimerPause<CR>", { desc = "Timer Pause" })
+vim.keymap.set("n", "<space>tc", ":TimerResume<CR>", { desc = "Timer Continue" })
+vim.keymap.set("n", "<space>tsh", ":TimerShow<CR>", { desc = "Timer Show" })
+vim.keymap.set("n", "<space>tsto", ":TimerStop<CR>", { desc = "Timer Stop" })
+vim.keymap.set("n", "<space>th", ":TimerHide<CR>", { desc = "Timer Hide" })
+
+
+
+
+
 -- NOTE: Added dap keymaps
 vim.keymap.set("n", "<space>db", ":DapToggleBreakpoint<CR>", { desc = "Do break point" }) -- add|delete breakpoint on line 
 vim.keymap.set("n", "<space>dc", ":DapContinue<CR>", { desc = "Start connect to debug" }) -- даёт выбор: 1) запустить debug файл или 2)подключиться к процессу. Я тестил первый вариант, работает хорошо, второй не пробовал, хз как оно работет 
