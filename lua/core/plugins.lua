@@ -184,12 +184,18 @@ require("lazy").setup({
       {
         mode = { "n" },
         { "<leader>c", group = "Comments" },
-        { "<leader>g", group = "git" },
-        { "[", group = "prev" },
-        { "]", group = "next" },
-        { "<space>p", group = "goto-preview" },
-        { "<space>d", group = "debugger" },
-        { "z", group = "fold" },
+        { "<leader>g", group = "Git" },
+        { "[", group = "Prev" },
+        { "]", group = "Next" },
+        { "<space>p", group = "Goto-preview" },
+        { "<space>l", group = "Find file by" },
+        { "<space>t", group = "Timer" },
+        { "<space>o", group = "Obsidian" },
+        { "<space>oto", group = "Today/Tomorrow" },
+        { "<space>s", group = "Spectre (like Ctrl+f but in all files)" },
+        { "<space>n", group = "Rename word" },
+        { "<space>d", group = "Debugger" },
+        { "z", group = "Fold" },
         { "<space>cl", desc = "Comment line"},
         { "<space>c", desc = "Comment highlighted lines"},
         { '<space>pd',  desc = "Preview Definition" },
@@ -223,6 +229,7 @@ require("lazy").setup({
   end,
 },
 
+    -- pomo (timer) plugin
 {
   "epwalsh/pomo.nvim",
   version = "*",  -- Recommended, use latest release instead of latest commit
@@ -233,7 +240,28 @@ require("lazy").setup({
     "rcarriga/nvim-notify",
   },
 },
-        { 'rcarriga/nvim-notify' },
+
+    -- notify
+    { 'rcarriga/nvim-notify' },
+
+    -- Obsidian.nvim
+    {
+        "epwalsh/obsidian.nvim",
+        version = "*",  -- recommended, use latest release instead of latest commit
+        lazy = true,
+        ft = "markdown",
+  -- Replace the above line with this if you only want to load obsidian.nvim for markdown files in your vault:
+  -- event = {
+  --   -- If you want to use the home shortcut '~' here you need to call 'vim.fn.expand'.
+  --   -- E.g. "BufReadPre " .. vim.fn.expand "~" .. "/my-vault/*.md"
+  --   -- refer to `:h file-pattern` for more examples
+  --   "BufReadPre path/to/my-vault/*.md",
+  --   "BufNewFile path/to/my-vault/*.md",
+  -- },
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+        },
+    },
     -- colorizer #color highlighting
     {'norcalli/nvim-colorizer.lua'},
 

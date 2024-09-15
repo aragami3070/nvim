@@ -50,3 +50,5 @@ vim.opt.listchars = { space = '·', tab = '| '}
 vim.opt.list = true
 
 vim.notify = require("notify")
+
+vim.opt.conceallevel = 1

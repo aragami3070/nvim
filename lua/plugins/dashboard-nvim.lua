@@ -41,8 +41,8 @@ require('dashboard').setup {
                 icon_hl = 'Directory',
                 desc = 'Find files',
                 desc_hl = 'String',
-                key = 'o',
-                keymap = 'SPC o',
+                key = 'lf',
+                keymap = 'SPC lf',
                 key_hl = 'Number',
                 action = ':Telescope find_files'
             },
@@ -60,8 +60,8 @@ require('dashboard').setup {
                 icon_hl = 'Directory',
                 desc = 'Find text',
                 desc_hl = 'String',
-                key = 'l',
-                keymap = 'SPC l',
+                key = 'lg',
+                keymap = 'SPC lg',
                 key_hl = 'Number',
                 action = ':Telescope live_grep'
             },

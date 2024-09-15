@@ -66,6 +66,10 @@ require("plugins.notify")
 require('plugins.gitsigns')
 require('plugins.diffview')
 
+-- Added obsidian.nivm
+require("plugins.obsidian-nvim")
+
+-- Added nvim-dap
 require('plugins.nvim-dap-c++')
 require('plugins.nvim-dap-c#')
 require('plugins.nvim-dap-ui')
