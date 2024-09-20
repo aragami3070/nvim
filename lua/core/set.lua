@@ -5,13 +5,15 @@ vim.opt.relativenumber = true
 --Added cursorline
 vim.opt.cursorline = true
 
---Added column on 80 and 120 symbol	
-vim.opt.colorcolumn = "80,120"
+--Added column on 80
+vim.opt.colorcolumn = "80"
+
+-- expand tab like tab
+vim.opt.expandtab = false
 
 --don't understande but added
 vim.opt.undofile = true
 vim.opt.spelllang = {"en", "ru"}
-vim.opt.expandtab = true
 
 vim.opt.smartindent = true
 vim.opt.mouse = "a"
