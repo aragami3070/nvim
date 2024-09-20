@@ -114,6 +114,13 @@ vim.keymap.set("n", "<space>oye", ":ObsidianYesterday<CR>", { desc = "Open yeste
 
 
 
+-- NOTE: Added CMakeDebug start
+vim.keymap.set("n", "<space>dsc", ":CMakeDebug<CR>", { desc = "Start CMake debug"})
+
+
+
+
+
 -- NOTE: Added dap keymaps
 vim.keymap.set("n", "<space>db", ":DapToggleBreakpoint<CR>", { desc = "Do break point" }) -- add|delete breakpoint on line 
 vim.keymap.set("n", "<space>dc", ":DapContinue<CR>", { desc = "Start connect to debug" }) -- даёт выбор: 1) запустить debug файл или 2)подключиться к процессу. Я тестил первый вариант, работает хорошо, второй не пробовал, хз как оно работет 

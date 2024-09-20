@@ -195,6 +195,7 @@ require("lazy").setup({
         { "<space>s", group = "Spectre (like Ctrl+f but in all files)" },
         { "<space>n", group = "Rename word" },
         { "<space>d", group = "Debugger" },
+        { "<space>ds", group = "Debugger CMake start" },
         { "z", group = "Fold" },
         { "<space>cl", desc = "Comment line"},
         { "<space>c", desc = "Comment highlighted lines"},
@@ -312,6 +313,7 @@ require("lazy").setup({
     "rcarriga/nvim-notify",
     }
 },
+	{ 'Civitasv/cmake-tools.nvim' },
 
     -- NOTE: DON'T CHANGE  PLS
     --Debug adapter protocol
