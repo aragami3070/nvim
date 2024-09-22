@@ -11,7 +11,6 @@ vim.opt.colorcolumn = "80"
 -- expand tab like tab
 vim.opt.expandtab = false
 
---don't understande but added
 vim.opt.undofile = true
 vim.opt.spelllang = {"en", "ru"}
 
