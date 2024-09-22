@@ -69,6 +69,8 @@ require('plugins.diffview')
 -- Added obsidian.nivm
 require("plugins.obsidian-nvim")
 
+require("plugins.hlchunk-nvim")
+
 -- Added nvim-dap
 require('plugins.nvim-dap-c++')
 require('plugins.nvim-dap-c#')

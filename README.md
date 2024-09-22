@@ -7,7 +7,7 @@
 - [Requirements](#Requirements)
 - [My dirs settings](#My-dirs-settings)
 - [Base plugins](#Base-plugins)
-    - [Package manager (lazy.nvim)](#Package-manager-(lazy.nvim))
+    - [Package manager](#Package-manager))
     - [neo-tree](#neo-tree)
     <!-- - [treesitter](#treesitter) -->
     <!-- - [lsp, cmp, mason](#lsp-cmp-mason) -->
@@ -27,7 +27,7 @@
 init.lua - to use all config from other plugins. 
 
 In core/ I have:
-- [plugin.lua](https://github.com/aragami3070/nvim/blob/master/lua/core/plugins.lua) for write installation all plugins that I use
+- [plugins.lua](https://github.com/aragami3070/nvim/blob/master/lua/core/plugins.lua) for write installation all plugins that I use
 - [keymaps.lua](https://github.com/aragami3070/nvim/blob/master/lua/core/keymaps.lua) for setup my keymaps
 - [set.lua](https://github.com/aragami3070/nvim/blob/master/lua/core/set.lua) for setup neovim options
 - [colors.lua](https://github.com/aragami3070/nvim/blob/master/lua/core/colors.lua) for setup my color theme
@@ -40,9 +40,9 @@ In plugins/ I have configs for installed plugins
 
 Base plugin (I think so)
 
-## Package manager (lazy.nvim)
+## Package manager
 
-<strong>lua/core/plugin.lua:</strong>
+<strong>lua/core/plugins.lua:</strong>
 
 ```Lua
 -- Bootstrap lazy.nvim
@@ -72,8 +72,9 @@ vim.g.maplocalleader = "\\"
 require("lazy").setup({
     spec = {
         -- installation your plugins
-    }
+    },
     checker = { enabled = true },
+})
 ```
 
 <strong>init.lua</strong>
@@ -84,7 +85,7 @@ require('core.plugins')
 
 ## neo-tree
 
-<strong>lua/core/plugin.lua:</strong>
+<strong>lua/core/plugins.lua:</strong>
 
 ```Lua
     -- File explorer
@@ -126,7 +127,7 @@ require("neo-tree").setup({
 <strong>init.lua</strong>
 
 ```Lua
-require('plugins.neo-tree.lua')
+require('plugins.neo-tree')
 ```
 
 <strong>lua/core/keymaps.lua</strong>
@@ -146,7 +147,7 @@ vim.keymap.set("n", "<space>gs", ":Neotree git_status<CR>", {desc = "Open Neotre
 
 <!-- ## treesitter -->
 
-<!-- ## lsp, cmp, mason -->
+<!-- ## lsp cmp mason -->
 
 
 ## Markdown-preview

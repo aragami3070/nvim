@@ -315,6 +315,10 @@ require("lazy").setup({
 },
 	{ 'Civitasv/cmake-tools.nvim' },
 
+{
+  "shellRaining/hlchunk.nvim",
+ event = { "UIEnter" },
+},
     -- NOTE: DON'T CHANGE  PLS
     --Debug adapter protocol
     {'mfussenegger/nvim-dap'},

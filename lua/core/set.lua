@@ -8,8 +8,8 @@ vim.opt.cursorline = true
 --Added column on 80
 vim.opt.colorcolumn = "80"
 
--- expand tab like tab
-vim.opt.expandtab = false
+-- expand tab like 4 spaces
+vim.opt.expandtab = true
 
 vim.opt.undofile = true
 vim.opt.spelllang = {"en", "ru"}
