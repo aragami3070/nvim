@@ -313,12 +313,17 @@ require("lazy").setup({
     "rcarriga/nvim-notify",
     }
 },
+
 	{ 'Civitasv/cmake-tools.nvim' },
 
 {
   "shellRaining/hlchunk.nvim",
  event = { "UIEnter" },
 },
+
+    { 'ray-x/web-tools.nvim' },
+
+
     -- NOTE: DON'T CHANGE  PLS
     --Debug adapter protocol
     {'mfussenegger/nvim-dap'},

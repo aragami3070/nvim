@@ -21,6 +21,8 @@
 - [xclip](https://linuxconfig.org/how-to-use-xclip-on-linux) - to copy from neovim to main buffer
 - [ripgerp](https://github.com/BurntSushi/ripgrep) - to search with [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
 - [cargo](https://github.com/rust-lang/cargo) - to replace something with [nvim-spectre](https://github.com/nvim-pack/nvim-spectre)
+- [obsidian](https://help.obsidian.md/Getting+started/Download+and+install+Obsidian) - you need obsidian for note and change workspace dir in [obsidian-nvim.lua](https://github.com/aragami3070/nvim/blob/master/lua/plugins/obsidian-nvim.lua) (or remove obsidian.nvim plugin)
+- [browser-sync](#web-tools) - to use veb tools
 
 # My dirs settings
 
@@ -157,10 +159,21 @@ Need to run markdown-preview:
 :Lazy build markdown-preview.nvim
 ```
 
+## web-tools
 
+need install to use html preview
 
+```
+npm install -g browser-sync
+```
 
+or if permision denied errors use sudo:
 
+```
+sudo npm install -g browser-sync
+```
+
+or this [Resolving EACCES permissions errors when installing packages globally](https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally)
 
 
 
