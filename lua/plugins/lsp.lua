@@ -71,12 +71,19 @@
     end
   }
 
-  -- require('lspconfig')['typst_lsp'].setup {
-  --   capabilities = capabilities,
-  --   on_attach = function(client, bufnr)
-  --       navic.attach(client, bufnr)
-  --   end
-  -- }
+  require('lspconfig')['tinymist'].setup {
+    on_init = function(client, initialization_result)
+    if client.server_capabilities then
+      client.server_capabilities.documentFormattingProvider = false
+      client.server_capabilities.semanticTokensProvider = false  -- turn off semantic tokens
+    end
+  end,
+    capabilities = capabilities,
+    on_attach = function(client, bufnr)
+        navic.attach(client, bufnr)
+    end,
+    handlers = nil,
+  }
 
   require('lspconfig')['svelte'].setup {
     capabilities = capabilities,
