@@ -43,12 +43,12 @@
     end
   }
 
-  require('lspconfig')['ts_ls'].setup {
-    capabilities = capabilities,
-    on_attach = function(client, bufnr)
-        navic.attach(client, bufnr)
-    end
-  }
+  -- require('lspconfig')['ts_ls'].setup {
+  --   capabilities = capabilities,
+  --   on_attach = function(client, bufnr)
+  --       navic.attach(client, bufnr)
+  --   end
+  -- }
 
   require('lspconfig')['cssls'].setup {
     capabilities = capabilities,

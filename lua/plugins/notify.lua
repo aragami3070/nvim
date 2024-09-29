@@ -7,6 +7,6 @@ require("notify").setup({
       notification = "%T",
       notification_history = "%FT%T"
     },
-    timeout = 5000,
-    top_down = true
+    timeout = 1400,
+    top_down = true,
 })

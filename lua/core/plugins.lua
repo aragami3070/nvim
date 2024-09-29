@@ -194,6 +194,7 @@ require("lazy").setup({
         { "<space>oto", group = "Today/Tomorrow" },
         { "<space>s", group = "Spectre (like Ctrl+f but in all files)" },
         { "<space>n", group = "Rename word" },
+        { "<space>.", group = "Noice Last/History message" },
         { "<space>d", group = "Debugger" },
         { "<space>ds", group = "Debugger CMake start" },
         { "z", group = "Fold" },

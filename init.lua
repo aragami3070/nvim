@@ -72,9 +72,12 @@ require("plugins.obsidian-nvim")
 -- Added indent highlighting
 require("plugins.hlchunk-nvim")
 
+-- Added Noice config
+require('plugins.noice')
+
 -- Added web preview
 require('plugins.web-tools-nvim')
-vim.lsp.set_log_level("debug")
+
 -- Added nvim-dap
 require('plugins.nvim-dap-c++')
 require('plugins.nvim-dap-c#')

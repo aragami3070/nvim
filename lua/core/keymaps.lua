@@ -90,6 +90,14 @@ vim.keymap.set("n", "<space>gh", ":DiffviewFileHistory<CR>", { desc = "Open file
 
 
 
+-- NOTE: Added Noice Last/History message
+vim.keymap.set("n", "<space>.l", ":NoiceLast<CR>", { desc = "Noice Last message" })
+vim.keymap.set("n", "<space>.h", ":NoiceHistory<CR>", { desc = "Noice History message" })
+
+
+
+
+
 -- NOTE: Added pomo (timer) keymaps
 vim.keymap.set("n", "<space>tse", ":TimerSession<CR>", { desc = "Start Timer Session" })
 vim.keymap.set("n", "<space>tsta", ":TimerStart", { desc = "Timer Start (choose time)" })
