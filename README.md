@@ -7,10 +7,10 @@
 - [Requirements](#Requirements)
 - [My dirs settings](#My-dirs-settings)
 - [Base plugins](#Base-plugins)
-    - [Package manager](#Package-manager))
+    - [Package manager](#Package-manager)
     - [neo-tree](#neo-tree)
     - [treesitter](#treesitter)
-    <!-- - [lsp, cmp, mason](#lsp-cmp-mason) -->
+    - [lsp, cmp, mason, navic](#lsp-cmp-mason-navic)
 
 # Requirements
 
@@ -43,6 +43,9 @@ In plugins/ I have configs for installed plugins
 Base plugin (I think so)
 
 ## Package manager
+
+<details>
+  <summary>Open</summary>
 
 <strong>lua/core/plugins.lua:</strong>
 
@@ -85,7 +88,12 @@ require("lazy").setup({
 require('core.plugins')
 ```
 
+</details>
+
 ## neo-tree
+
+<details>
+  <summary>Open</summary>
 
 <strong>lua/core/plugins.lua:</strong>
 
@@ -147,7 +155,23 @@ vim.keymap.set("n", "<space>gs", ":Neotree git_status<CR>", {desc = "Open Neotre
 |     Normal     | '\<space>' + 'r'       | Close Neotree Window                               |
 |     Normal     | '\<space>' + 'g' + 's' | Open Neotree git status Window                     |
 
+</details>
+
 ## treesitter
+
+<details>
+  <summary>Open</summary>
+
+<strong>lua/core/plugins.lua</strong>
+
+```lua
+    -- Syntax highlighting
+    {
+        'nvim-treesitter/nvim-treesitter',
+        build = ':TSUpdate'
+    },
+
+```
 
 <strong>lua/plugins/treesitter.lua</strong>
 
@@ -180,9 +204,331 @@ require "nvim-treesitter.configs".setup {
 ```lua
 require('plugins.treesitter')
 ```
+</details>
 
-<!-- ## lsp cmp mason -->
+## lsp cmp mason navic
 
+<details>
+  <summary>Open</summary>
+
+These plugins are too interconnected to be divided into different sections
+
+<strong>lua/core/plugins.lua</strong>
+
+```lua
+    -- LSP Package Manager
+    {
+         "williamboman/mason.nvim",
+         Build = ":MasonUpdate",
+    },
+
+    {
+        "williamboman/mason-lspconfig.nvim"
+    },
+
+    -- Native LSP configuration
+    {
+        'neovim/nvim-lspconfig',
+    },
+
+    -- Completion
+    {
+        'hrsh7th/nvim-cmp',
+        'hrsh7th/vim-vsnip',
+        'hrsh7th/vim-vsnip-integ',
+        'hrsh7th/cmp-vsnip',
+        'hrsh7th/cmp-nvim-lsp',
+        'hrsh7th/cmp-buffer',
+        'hrsh7th/cmp-path',
+        'hrsh7th/cmp-cmdline'
+    },
+
+    -- Non-LSP actions and more
+    {
+        'nvimtools/none-ls.nvim',
+    },
+
+    -- LSP: Snippets
+    {
+        'L3MON4D3/LuaSnip',
+        'saadparwaiz1/cmp_luasnip',
+    },
+
+    -- LSP signature pop-up
+    {'ray-x/lsp_signature.nvim'},
+
+    -- nvim-navic line 
+    {
+        "SmiteshP/nvim-navic",
+        dependencies = "neovim/nvim-lspconfig"
+    },
+
+    -- barbecue (extended nvim-navic)
+    {
+        "utilyre/barbecue.nvim",
+        name = "barbecue",
+        version = "*",
+        dependencies = {
+            "SmiteshP/nvim-navic",
+            "nvim-tree/nvim-web-devicons", -- optional dependency
+        },
+        opts = {
+        }
+    },
+
+```
+<strong>lua/plugins/mason.lua</strong>
+```lua
+require("mason").setup()
+
+require("mason-lspconfig").setup {
+    ensure_installed = { "lua_ls", "omnisharp", "clangd", "texlab", "neocmake", "markdown_oxide", "ts_ls", "cssls", "html", "asm_lsp", "tinymist" },
+}
+
+```
+<strong>lua/plugins/nvim-navic.lua</strong>
+
+```lua
+local navic = require('nvim-navic')
+
+navic.setup {
+    icons = {
+        File = ' ',
+        Module = ' ',
+        Namespace = ' ',
+        Package = ' ',
+        Class = ' ',
+        Method = ' ',
+        Property = ' ',
+        Field = ' ',
+        Constructor = ' ',
+        Enum = ' ',
+        Interface = ' ',
+        Function = ' ',
+        Variable = ' ',
+        Constant = ' ',
+        String = ' ',
+        Number = ' ',
+        Boolean = ' ',
+        Array = ' ',
+        Object = ' ',
+        Key = "󰌋 ",
+        Null = '󰟢 ',
+        EnumMember = ' ',
+        Struct = ' ',
+        Event = ' ',
+        Operator = ' ',
+        TypeParameter = ' '
+    },
+    lsp = {
+        auto_attach = false,
+        preference = nil,
+    },
+    highlight = true,
+    separator = " > ",
+    depth_limit = 0,
+    depth_limit_indicator = "..",
+    safe_output = true,
+    lazy_update_context = false,
+    click = false,
+    format_text = function(text)
+        return text
+    end,
+}
+navic.setup {
+}
+
+```
+
+<strong>lua/plugins/lsp.lua</strong>
+
+```lua
+  local pid = vim.fn.getpid()
+
+  local navic = require("nvim-navic")
+  local capabilities = require('cmp_nvim_lsp').default_capabilities()
+  -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
+  require('lspconfig')['clangd'].setup {
+    capabilities = capabilities,
+    on_attach = function(client, bufnr)
+        navic.attach(client, bufnr)
+    end
+  }
+
+  require('lspconfig')['omnisharp'].setup {
+    capabilities = capabilities,
+    cmd = { "/home/aragami3070/.local/share/nvim/mason/bin/omnisharp", "--languageserver" , "--hostPID", tostring(pid)},
+    on_attach = function(client, bufnr)
+        navic.attach(client, bufnr)
+    end
+  }
+
+  require('lspconfig')['texlab'].setup {
+    capabilities = capabilities,
+    on_attach = function(client, bufnr)
+        navic.attach(client, bufnr)
+    end
+  }
+
+  require('lspconfig')['neocmake'].setup {
+    capabilities = capabilities,
+    on_attach = function(client, bufnr)
+        navic.attach(client, bufnr)
+    end
+  }
+
+  require('lspconfig')['markdown_oxide'].setup {
+    capabilities = capabilities,
+    on_attach = function(client, bufnr)
+        navic.attach(client, bufnr)
+    end
+  }
+
+  require('lspconfig')['lua_ls'].setup {
+    capabilities = capabilities,
+    on_attach = function(client, bufnr)
+        navic.attach(client, bufnr)
+    end
+  }
+
+  -- js/typescript
+  require('lspconfig')['ts_ls'].setup {
+    capabilities = capabilities,
+    on_attach = function(client, bufnr)
+        navic.attach(client, bufnr)
+    end
+  }
+
+  require('lspconfig')['cssls'].setup {
+    capabilities = capabilities,
+    on_attach = function(client, bufnr)
+        navic.attach(client, bufnr)
+    end
+  }
+
+  require('lspconfig')['html'].setup {
+    capabilities = capabilities,
+    on_attach = function(client, bufnr)
+        navic.attach(client, bufnr)
+    end
+  }
+
+  require('lspconfig')['asm_lsp'].setup {
+    capabilities = capabilities,
+    on_attach = function(client, bufnr)
+        navic.attach(client, bufnr)
+    end
+  }
+
+  require('lspconfig')['tinymist'].setup {
+    on_init = function(client, initialization_result)
+    if client.server_capabilities then
+      client.server_capabilities.documentFormattingProvider = false
+      client.server_capabilities.semanticTokensProvider = false  -- turn off semantic tokens
+    end
+  end,
+    capabilities = capabilities,
+    on_attach = function(client, bufnr)
+        navic.attach(client, bufnr)
+    end,
+    handlers = nil,
+  }
+```
+
+```lua
+local cmp = require'cmp'
+  cmp.setup({
+    snippet = {
+      -- REQUIRED - you must specify a snippet engine
+      expand = function(args)
+        vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
+        -- require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+        -- require('snippy').expand_snippet(args.body) -- For `snippy` users.
+        -- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
+        -- vim.snippet.expand(args.body) -- For native neovim snippets (Neovim v0.10+)
+      end,
+    },
+    window = {
+      completion = cmp.config.window.bordered(),
+      documentation = cmp.config.window.bordered(),
+    },
+    mapping = cmp.mapping.preset.insert({
+      ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+      ['<C-f>'] = cmp.mapping.scroll_docs(4),
+      ['<C-Space>'] = cmp.mapping.complete(),
+      ['<C-e>'] = cmp.mapping.abort(),
+      ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+      ['<Tab>'] = cmp.mapping(function(fallback)
+        if cmp.visible() then
+            cmp.select_next_item()
+        else
+            fallback()
+        end
+      end, {"i","s"}),
+     ['<S-Tab>'] = cmp.mapping(function(fallback)
+        if cmp.visible() then
+            cmp.select_prev_item()
+        else
+            fallback()
+        end
+      end, {"i","s"}),
+    }),
+    sources = cmp.config.sources({
+      { name = 'nvim_lsp' },
+      { name = 'vsnip' }, -- For vsnip users.
+      { name = 'luasnip' }, -- For luasnip users.
+      { name = 'nvim-cmp'},
+      -- { name = 'ultisnips' }, -- For ultisnips users.
+      -- { name = 'snippy' }, -- For snippy users.
+    }, {
+      { name = 'buffer' },
+    })
+  })
+
+  -- To use git you need to install the plugin petertriho/cmp-git and uncomment lines below
+  -- Set configuration for specific filetype.
+  --[[ cmp.setup.filetype('gitcommit', {
+    sources = cmp.config.sources({
+      { name = 'git' },
+    }, {
+      { name = 'buffer' },
+    })
+ })
+ require("cmp_git").setup() ]]-- 
+
+  -- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
+  cmp.setup.cmdline({ '/', '?' }, {
+    mapping = cmp.mapping.preset.cmdline(),
+    sources = {
+      { name = 'buffer' }
+    }
+  })
+
+  -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
+  cmp.setup.cmdline(':', {
+    mapping = cmp.mapping.preset.cmdline(),
+    sources = cmp.config.sources({
+      { name = 'path' }
+    }, {
+      { name = 'cmdline' }
+    }),
+    matching = { disallow_symbol_nonprefix_matching = false }
+  })
+
+```
+<strong>init.lua</strong>
+
+```lua
+-- Added lsp plugin 
+require('plugins.lsp')
+-- Added plugin that auto downloading language server (code language)
+require('plugins.mason')
+-- Added plugin that auto compliting
+require('plugins.cmp')
+-- Added navic
+require('plugins.nvim-navic')
+```
+</details>
 
 ## Markdown-preview
 Need to run markdown-preview:

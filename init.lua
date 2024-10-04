@@ -78,6 +78,9 @@ require('plugins.noice')
 -- Added web preview
 require('plugins.web-tools-nvim')
 
+-- Added navic
+require('plugins.nvim-navic')
+
 -- Added nvim-dap
 require('plugins.nvim-dap-c++')
 require('plugins.nvim-dap-c#')
