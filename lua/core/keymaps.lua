@@ -18,7 +18,7 @@ vim.api.nvim_set_keymap('n', '<space>gb', ':Telescope git_branches<CR>', {desc =
 vim.keymap.set("n", "<space>f", ":Neotree right<CR>", {desc = "Open Neotree Window"})
 vim.keymap.set("n", "<space>r", ":Neotree close<CR>", {desc = "Close Neotree Window"})
 vim.keymap.set("n", "<space>gs", ":Neotree git_status<CR>", {desc = "Open Neotree git_status Window"})
-
+vim.keymap.set("n", "<space>gds",function() require("neo-tree.command").execute({ source = "document_symbols", position = "right", dir = vim.uv.cwd() }) end, {desc = "Open Neotree symbols Window"})
 
 
 
