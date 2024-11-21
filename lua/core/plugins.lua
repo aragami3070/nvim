@@ -299,28 +299,28 @@ require("lazy").setup({
         event = 'VimEnter',
         dependencies = { {'nvim-tree/nvim-web-devicons'}}
     },
-{
-  "folke/noice.nvim",
-  event = "VeryLazy",
-  opts = {
-    -- add any options here
-  },
-  dependencies = {
-    -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
-    "MunifTanjim/nui.nvim",
-    -- OPTIONAL:
-    --   `nvim-notify` is only needed, if you want to use the notification view.
-    --   If not available, we use `mini` as the fallback
-    "rcarriga/nvim-notify",
-    }
-},
+    {
+        "folke/noice.nvim",
+        event = "VeryLazy",
+        opts = {
+        -- add any options here
+        },
+        dependencies = {
+            -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+            "MunifTanjim/nui.nvim",
+            -- OPTIONAL:
+            --   `nvim-notify` is only needed, if you want to use the notification view.
+            --   If not available, we use `mini` as the fallback
+            "rcarriga/nvim-notify",
+        }
+    },
 
 	{ 'Civitasv/cmake-tools.nvim' },
 
-{
-  "shellRaining/hlchunk.nvim",
- event = { "UIEnter" },
-},
+    {
+        "shellRaining/hlchunk.nvim",
+        event = { "UIEnter" },
+    },
 
     { 'ray-x/web-tools.nvim' },
 
@@ -331,6 +331,11 @@ require("lazy").setup({
         version = '0.3.*',
         build = function() require 'typst-preview'.update() end,
     },
+{
+  "folke/trouble.nvim",
+  opts = {}, -- for default options, refer to the configuration section for custom setup.
+  cmd = "Trouble",
+},
 
 
     -- NOTE: DON'T CHANGE  PLS

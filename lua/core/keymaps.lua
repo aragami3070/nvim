@@ -130,6 +130,18 @@ vim.keymap.set("n", "<space>dsc", ":CMakeDebug<CR>", { desc = "Start CMake debug
 
 
 
+-- NOTE: Added trouble kemaps
+vim.keymap.set("n", "<space>zd", ":Trouble diagnostics toggle focus=true<cr>", { desc = "Diagnostics (Trouble)"})
+vim.keymap.set("n", "<space>zbd", ":Trouble diagnostics toggle filter.buf=0 focus=true<cr>", { desc = "Buffer Diagnostics (Trouble)"})
+vim.keymap.set("n", "<space>zs", ":Trouble symbols toggle focus=true<cr>", { desc = "Symbols (Trouble)"})
+-- vim.keymap.set("n", "<space>zls", ":Trouble lsp toggle focus=false win.position=right<cr>", { desc = "LSP Definitions/references/... (Trouble)"})
+-- vim.keymap.set("n", "<space>zll", ":Trouble loclist toggle<cr>", { desc = "Location List (Trouble)"})
+-- vim.keymap.set("n", "<space>zq", ":Trouble qflist toggle<cr>", { desc = "Quickfix List (Trouble)"})
+
+
+
+
+
 -- NOTE: Added dap keymaps
 vim.keymap.set("n", "<space>db", ":DapToggleBreakpoint<CR>", { desc = "Do break point" }) -- add|delete breakpoint on line 
 vim.keymap.set("n", "<space>dc", ":DapContinue<CR>", { desc = "Start connect to debug" }) -- даёт выбор: 1) запустить debug файл или 2)подключиться к процессу. Я тестил первый вариант, работает хорошо, второй не пробовал, хз как оно работет 
