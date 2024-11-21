@@ -52,6 +52,4 @@ vim.opt.list = true
 
 vim.notify = require("notify")
 
-vim.lsp.set_log_level("debug")
-
 vim.opt.conceallevel = 1
