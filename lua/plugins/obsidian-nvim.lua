@@ -86,9 +86,10 @@ require("obsidian").setup{
       -- NOTE: the 'char' value has to be a single character, and the highlight groups are defined below.
       [" "] = { char = "󰄱", hl_group = "ObsidianTodo" },
       ["x"] = { char = "✔", hl_group = "ObsidianDone" },
-      [">"] = { char = "", hl_group = "ObsidianRightArrow" },
-      ["~"] = { char = "󰰱", hl_group = "ObsidianTilde" },
-      ["!"] = { char = "", hl_group = "ObsidianImportant" },
+      [">"] = { char = "➣", hl_group = "ObsidianRightArrow" },
+      ["-"] = { char = "✗", hl_group = "ObsidianTilde" },
+      ["!"] = { char = "⚠︎", hl_group = "ObsidianImportant" },
+      ["i"] = { char = "𝐢", hl_group = "ObsidianIdeia" },
       -- Replace the above with this if you don't have a patched font:
       -- [" "] = { char = "☐", hl_group = "ObsidianTodo" },
       -- ["x"] = { char = "✔", hl_group = "ObsidianDone" },
@@ -111,6 +112,7 @@ require("obsidian").setup{
       ObsidianRightArrow = { bold = true, fg = "#f78c6c" },
       ObsidianTilde = { bold = true, fg = "#ff5370" },
       ObsidianImportant = { bold = true, fg = "#d73128" },
+      ObsidianIdeia = { bold = true, fg = "#80ff80" },
       ObsidianBullet = { bold = true, fg = "#89ddff" },
       ObsidianRefText = { underline = true, fg = "#c792ea" },
       ObsidianExtLinkIcon = { fg = "#c792ea" },
