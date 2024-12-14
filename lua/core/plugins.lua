@@ -337,6 +337,14 @@ require("lazy").setup({
   opts = {}, -- for default options, refer to the configuration section for custom setup.
   cmd = "Trouble",
 },
+{
+    "rachartier/tiny-inline-diagnostic.nvim",
+    event = "VeryLazy", -- Or `LspAttach`
+    priority = 1000, -- needs to be loaded in first
+    config = function()
+        require('tiny-inline-diagnostic').setup()
+    end
+},
 
 
     -- NOTE: DON'T CHANGE  PLS
