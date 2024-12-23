@@ -52,5 +52,21 @@ require("pomo").setup({
       { name = "Work", duration = "25m" },
       { name = "Long Break", duration = "15m" },
     },
+    customPomodoroForLearn = {
+      { name = "Work", duration = "25m" },
+      { name = "Short Break", duration = "10m" },
+      { name = "Work", duration = "25m" },
+      { name = "Short Break", duration = "10m" },
+      { name = "Work", duration = "25m" },
+      { name = "Long Break", duration = "15m" },
+    },
+    customPomodoroForWork = {
+      { name = "Work", duration = "60m" },
+      { name = "Short Break", duration = "20m" },
+      { name = "Work", duration = "60m" },
+      { name = "Short Break", duration = "20m" },
+      { name = "Work", duration = "60m" },
+      { name = "Long Break", duration = "40m" },
+    },
   },
 })
