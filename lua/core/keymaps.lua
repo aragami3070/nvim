@@ -98,8 +98,8 @@ vim.keymap.set("n", "<space>.h", ":NoiceHistory<CR>", { desc = "Noice History me
 
 -- NOTE: Added pomo (timer) keymaps
 vim.keymap.set("n", "<space>tsed", ":TimerSession pomodoro<CR>", { desc = "Start Timer Session (defualt)" })
-vim.keymap.set("n", "<space>tsel", ":TimerSession customPomodoroForLearn <CR>", { desc = "Start Timer Session (customPomodoroForLearn)" })
-vim.keymap.set("n", "<space>tsew", ":TimerSession customPomodoroForWork <CR>", { desc = "Start Timer Session (customPomodoroForWork)" })
+vim.keymap.set("n", "<space>tsel", ":TimerSession customPomodoroForLearn<CR>", { desc = "Start Timer Session (customPomodoroForLearn)" })
+vim.keymap.set("n", "<space>tsew", ":TimerSession customPomodoroForWork<CR>", { desc = "Start Timer Session (customPomodoroForWork)" })
 vim.keymap.set("n", "<space>tsta", ":TimerStart", { desc = "Timer Start (choose time)" })
 vim.keymap.set("n", "<space>tp", ":TimerPause<CR>", { desc = "Timer Pause" })
 vim.keymap.set("n", "<space>tc", ":TimerResume<CR>", { desc = "Timer Continue" })
