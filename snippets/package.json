@@ -1,0 +1,19 @@
+{
+	"contributes": {
+		"snippets": [
+			{
+				"language": "cpp",
+				"path": "./cpp.json"
+			},
+            {
+				"language": "lua",
+				"path": "./project-specific/nvim-lua.json"
+			},
+			{
+				"language": "all",
+				"path": "./ForAll.json"
+			}
+		]
+	},
+	"name": "my-snippets"
+}

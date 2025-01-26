@@ -84,6 +84,8 @@ require('plugins.nvim-navic')
 -- Added tiny-inline-diagnostic
 require('plugins.tiny-inline-diagnostic')
 
+require('plugins.nvim-scissors')
+
 -- Added nvim-dap
 require('plugins.nvim-dap-c++')
 require('plugins.nvim-dap-c#')
