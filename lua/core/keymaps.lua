@@ -141,6 +141,13 @@ vim.keymap.set("n", "<space>zs", ":Trouble symbols toggle focus=true<cr>", { des
 
 
 
+-- NOTE: Added scissors keymaps
+vim.keymap.set("n", "<space>ve", function() require("scissors").editSnippet() end, { desc = "Snippet: Edit" })
+vim.keymap.set({"n", "v"}, "<space>va", function() require("scissors").addNewSnippet() end, { desc = "Snippet: Add" })
+
+
+
+
 -- NOTE: Added dap keymaps
 vim.keymap.set("n", "<space>db", ":DapToggleBreakpoint<CR>", { desc = "Do break point" }) -- add|delete breakpoint on line 
 vim.keymap.set("n", "<space>dc", ":DapContinue<CR>", { desc = "Start connect to debug" }) -- даёт выбор: 1) запустить debug файл или 2)подключиться к процессу. Я тестил первый вариант, работает хорошо, второй не пробовал, хз как оно работет 
