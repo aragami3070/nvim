@@ -345,7 +345,10 @@ require("lazy").setup({
         require('tiny-inline-diagnostic').setup()
     end
 },
-
+{
+	"chrisgrieser/nvim-scissors",
+	dependencies = "nvim-telescope/telescope.nvim",
+},
 
     -- NOTE: DON'T CHANGE  PLS
     --Debug adapter protocol
