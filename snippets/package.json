@@ -5,6 +5,10 @@
 				"language": "cpp",
 				"path": "./cpp.json"
 			},
+			{
+				"language": "cs",
+				"path": "./cs.json"
+			},
             {
 				"language": "lua",
 				"path": "./project-specific/nvim-lua.json"
