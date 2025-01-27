@@ -18,7 +18,7 @@ local dap = require("dap")
           request = "launch",
           ---@diagnostic disable-next-line: redundant-parameter
           program = function()
-            return vim.fn.input("Path to dll: ", vim.fn.getcwd() .. "/", "file")
+            return vim.fn.input("Path to dll: ", vim.fn.getcwd() .. "/bin/Debug/net8.0/" .. vim.fn.substitute(vim.fn.getcwd(), '^.*/', '', '') .. ".dll", "file")
           end,
           cwd = "${workspaceFolder}",
         },
