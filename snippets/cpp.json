@@ -1,1 +1,1 @@
-{"nclass":{"prefix":"nclass","body":["class $TM_FILENAME_BASE{","private:","","public:","","};"]}}
+{"nClass":{"prefix":"nClass","body":["#pragma once","","$LINE_COMMENT Class $TM_FILENAME_BASE","class $TM_FILENAME_BASE{","private:","","protected:","","public:","    \/\/ Constructor","    $TM_FILENAME_BASE();","","    \/\/ Constructor","    $TM_FILENAME_BASE($TM_FILENAME_BASE& other);","","    \/\/ Destructor","    ~$TM_FILENAME_BASE();","","","    \/\/ get","","","    \/\/set","","","};"]}}
