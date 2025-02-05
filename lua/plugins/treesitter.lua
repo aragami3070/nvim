@@ -6,7 +6,7 @@ require "nvim-treesitter.configs".setup {
         "html", "css", "javascript",
         "typescript", "dockerfile",
         "bash", "json5", "cmake",
-        "bibtex",},--, 'latex' },
+        "bibtex","markdown_inline",},--, 'latex' },
     sync_install = false,
     highlight = {
         enable = true,
