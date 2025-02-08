@@ -44,5 +44,3 @@ navic.setup {
         return text
     end,
 }
-navic.setup {
-}
