@@ -93,3 +93,4 @@ require('plugins.nvim-dap-c#')
 require('plugins.nvim-dap-ui')
 
 vim.g.Illuminate_useDeprecated = 1
+require("plugins.instant-nvim")

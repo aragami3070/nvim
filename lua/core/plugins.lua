@@ -332,23 +332,26 @@ require("lazy").setup({
         version = '0.3.*',
         build = function() require 'typst-preview'.update() end,
     },
-{
-  "folke/trouble.nvim",
-  opts = {}, -- for default options, refer to the configuration section for custom setup.
-  cmd = "Trouble",
-},
-{
-    "rachartier/tiny-inline-diagnostic.nvim",
-    event = "VeryLazy", -- Or `LspAttach`
-    priority = 1000, -- needs to be loaded in first
-    config = function()
-        require('tiny-inline-diagnostic').setup()
-    end
-},
-{
-	"chrisgrieser/nvim-scissors",
-	dependencies = "nvim-telescope/telescope.nvim",
-},
+    {
+        "folke/trouble.nvim",
+        opts = {}, -- for default options, refer to the configuration section for custom setup.
+        cmd = "Trouble",
+    },
+    {
+        "rachartier/tiny-inline-diagnostic.nvim",
+        event = "VeryLazy", -- Or `LspAttach`
+        priority = 1000, -- needs to be loaded in first
+        config = function()
+            require('tiny-inline-diagnostic').setup()
+        end
+    },
+    {
+	    "chrisgrieser/nvim-scissors",
+	    dependencies = "nvim-telescope/telescope.nvim",
+    },
+    {
+        'jbyuki/instant.nvim',
+    },
 
     -- NOTE: DON'T CHANGE  PLS
     --Debug adapter protocol
