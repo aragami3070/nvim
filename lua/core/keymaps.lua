@@ -20,6 +20,15 @@ vim.keymap.set("n", "<space>gs", ":Neotree git_status<CR>", {desc = "Open Neotre
 
 
 
+
+-- NOTE: Added commenting short cut
+vim.keymap.set("n", "<space>cl", ":normal gcc<CR>", {desc = "Comment line"})
+vim.keymap.set("v", "<space>c", "<Esc>:normal gvgc<CR>", {desc = "Comment block"})
+
+
+
+
+
 -- NOTE: Added move to window kelymaps <Ctrl> + h/j/k/l
 vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "Go to Left Window", remap = true })
 vim.keymap.set("n", "<C-j>", "<C-w>j", { desc = "Go to Lower Window", remap = true })

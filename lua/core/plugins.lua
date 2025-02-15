@@ -140,16 +140,18 @@ require("lazy").setup({
     --VimTex
     {'lervag/vimtex'},
 
-    -- Commenting
-    {'tpope/vim-commentary'},
 
     --Terminal
     {"akinsho/toggleterm.nvim"},
 
     --Comments and ToDo comments 
     {"folke/todo-comments.nvim"},
-    {"terrortylor/nvim-comment"},
-
+{
+  "folke/ts-comments.nvim",
+  opts = {},
+  event = "VeryLazy",
+  enabled = vim.fn.has("nvim-0.10.0") == 1,
+},
     -- bufferline
     {"akinsho/bufferline.nvim"},
 

@@ -22,8 +22,6 @@ require('plugins.lsp')
 require('plugins.mason')
 --Added plugin that auto compliting
 require('plugins.cmp')
--- Added plugin that comment|uncomment lines by space+c
-require('plugins.nvim-comment')
 -- Added plugin that add lualine in nvim
 require('plugins.lualine')
 -- Added plugin that add bufferline in nvim
@@ -94,3 +92,5 @@ require('plugins.nvim-dap-ui')
 
 vim.g.Illuminate_useDeprecated = 1
 require("plugins.instant-nvim")
+
+require('plugins.ts-comments-nvim')
