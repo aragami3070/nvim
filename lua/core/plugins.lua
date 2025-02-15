@@ -354,6 +354,11 @@ require("lazy").setup({
     {
         'jbyuki/instant.nvim',
     },
+    {
+        'stevearc/conform.nvim',
+        event = { "BufReadPre", "BufNewFile" },
+        opts = {},
+    },
 
     -- NOTE: DON'T CHANGE  PLS
     --Debug adapter protocol

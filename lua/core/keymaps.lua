@@ -21,6 +21,18 @@ vim.keymap.set("n", "<space>gs", ":Neotree git_status<CR>", {desc = "Open Neotre
 
 
 
+-- NOTE: Added formatting short cut
+vim.keymap.set({ "n", "v" }, "<leader>m", function()
+      require("conform").format({
+        lsp_fallback = true,
+        async = false,
+        timeout_ms = 500,
+      })
+    end, { desc = "Format file or range (in visual mode)" })
+
+
+
+
 -- NOTE: Added commenting short cut
 vim.keymap.set("n", "<space>cl", ":normal gcc<CR>", {desc = "Comment line"})
 vim.keymap.set("v", "<space>c", "<Esc>:normal gvgc<CR>", {desc = "Comment block"})
