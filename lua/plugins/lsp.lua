@@ -76,11 +76,6 @@
   }
 
   require('lspconfig')['tinymist'].setup {
-    settings = {
-        formatterMode = "typstfmt",
-        exportPdf = "onType",
-        semanticTokens = "disable"
-    },
     capabilities = capabilities,
     on_attach = function(client, bufnr)
         navic.attach(client, bufnr)
