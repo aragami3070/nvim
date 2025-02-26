@@ -95,3 +95,4 @@ require("plugins.instant-nvim")
 
 require('plugins.ts-comments-nvim')
 require('plugins.formatting')
+require('plugins.nvim-devdocs')

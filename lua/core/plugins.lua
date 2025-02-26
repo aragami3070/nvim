@@ -359,7 +359,14 @@ require("lazy").setup({
         event = { "BufReadPre", "BufNewFile" },
         opts = {},
     },
-
+    {
+        "luckasRanarison/nvim-devdocs",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "nvim-telescope/telescope.nvim",
+            "nvim-treesitter/nvim-treesitter",
+        },
+    },
     -- NOTE: DON'T CHANGE  PLS
     --Debug adapter protocol
     {'mfussenegger/nvim-dap'},
