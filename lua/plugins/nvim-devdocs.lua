@@ -22,8 +22,4 @@ require('nvim-devdocs').setup({
         open_in_browser = ""
     },
     ensure_installed = {}, -- get automatically installed
-    after_open = function(bufnr)
-        vim.api.nvim_buf_set_keymap(bufnr, 'n', '<Esc>', ':close<CR>', {"Close devdocs window"})
-    end
-    -- after_open = function(bufnr) end, -- callback that runs after the Devdocs window is opened. Devdocs buffer ID will be passed in
 })
