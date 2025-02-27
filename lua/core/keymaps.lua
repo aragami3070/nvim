@@ -169,6 +169,18 @@ vim.keymap.set({"n", "v"}, "<space>va", function() require("scissors").addNewSni
 
 
 
+
+-- NOTE:
+vim.keymap.set("n", "<space>bc", ":DevdocsOpenCurrent<cr>", { desc = "Open dev docs current"})
+vim.keymap.set("n", "<space>bo", ":DevdocsOpen ", { desc = "Open dev docs (choose lang)"})
+vim.keymap.set("n", "<space>bfc", ":DevdocsOpenCurrentFloat<cr>", { desc = "Open dev docs current(float)"})
+vim.keymap.set("n", "<space>bfo", ":DevdocsOpenFloat ", { desc = "Open dev docs (choose lang)(float)"})
+vim.keymap.set("n", "<space>bt", ":DevdocsToggle", { desc = "Reopen closed dev docs"})
+
+
+
+
+
 -- NOTE: Added dap keymaps
 vim.keymap.set("n", "<space>db", ":DapToggleBreakpoint<CR>", { desc = "Do break point" }) -- add|delete breakpoint on line 
 vim.keymap.set("n", "<space>dc", ":DapContinue<CR>", { desc = "Start connect to debug" }) -- даёт выбор: 1) запустить debug файл или 2)подключиться к процессу. Я тестил первый вариант, работает хорошо, второй не пробовал, хз как оно работет 
