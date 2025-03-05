@@ -283,6 +283,7 @@ require("lazy").setup({
 
    -- Colorscheme
     {'aragami3070/one-nvim'},
+    {'EdenEast/nightfox.nvim'},
 
     {
         "scalameta/nvim-metals",

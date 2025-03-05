@@ -21,6 +21,16 @@ vim.keymap.set("n", "<space>gs", ":Neotree git_status<CR>", {desc = "Open Neotre
 
 
 
+-- NOTE: Add keymaps for swap on white theme and reset this shit to normal theme (my one-nvim --- one love)
+vim.keymap.set('n', '<space><F10>', ":lua vim.opt.background = 'dark' vim.cmd.colorscheme('one-nvim') vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' }) vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' }) vim.api.nvim_set_hl(0, 'SignColumn', { bg = 'none' }) vim.api.nvim_set_hl(0, '@variable', { fg = '#98c379' })<CR>", {desc = 'Set normal dark theme'})
+vim.keymap.set("n", "<space><F11>", ":lua vim.cmd.colorscheme('carbonfox')    vim.api.nvim_set_hl(0, 'Normal', { bg = 'none' }) vim.api.nvim_set_hl(0, 'NormalFloat', { bg = 'none' }) vim.api.nvim_set_hl(0, 'SignColumn', { bg = 'none' }) vim.api.nvim_set_hl(0, '@variable', { fg = '#9879c3' })    <CR>", {desc = "Set another dark theme"})
+vim.keymap.set("n", "<space><F12>", ":lua vim.cmd.colorscheme('dayfox')<CR>", {desc = "Set white theme"})
+
+
+
+
+
+
 -- NOTE: Added formatting short cut
 vim.keymap.set({ "n", "v" }, "<leader>m", function()
       require("conform").format({
