@@ -46,8 +46,8 @@ vim.cmd('autocmd VimLeave * :set guicursor=a:ver25-blinkon10')
 vim.cmd('autocmd InsertEnter * :set norelativenumber')
 vim.cmd('autocmd InsertLeave * :set relativenumber')
 
--- Added space = '·', tab = '| '
-vim.opt.listchars = { space = '·', tab = '| '}
+-- Added space = '·', tab = '·'
+vim.opt.listchars = { space = '·', tab = '··'}
 vim.opt.list = true
 
 vim.notify = require("notify")
