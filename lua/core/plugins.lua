@@ -162,6 +162,7 @@ require("lazy").setup({
 
 		-- Pairing brackets
 		{ "windwp/nvim-autopairs" },
+		{ "windwp/nvim-ts-autotag" },
 
 		-- Colorscheme colors retrieval
 		{ "psliwka/termcolors.nvim" },
