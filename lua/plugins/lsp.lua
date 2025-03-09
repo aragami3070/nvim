@@ -48,9 +48,9 @@ require("lspconfig")["lua_ls"].setup({
 
 -- -- js/typescript
 require("typescript-tools").setup({
-	on_attach = function(client, bufnr)
-		navic.attach(client, bufnr)
-	end,
+	-- on_attach = function(client, bufnr)
+	-- 	navic.attach(client, bufnr)
+	-- end,
 	filetypes = {
 		"javascript",
 		"typescript",
@@ -77,7 +77,7 @@ require("lspconfig")["cssls"].setup({
 require("lspconfig")["html"].setup({
 	capabilities = capabilities,
 	filetypes = {
-		"css",
+		"html",
 		"javascript",
 		"typescript",
 		"vue",
