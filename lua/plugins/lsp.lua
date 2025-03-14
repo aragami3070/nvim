@@ -55,6 +55,8 @@ require("typescript-tools").setup({
 		"javascript",
 		"typescript",
 		"vue",
+		"tsx",
+		"typescriptreact",
 	},
 	settings = {
 		single_file_support = false,
@@ -71,6 +73,8 @@ require("lspconfig")["cssls"].setup({
 		"javascript",
 		"typescript",
 		"vue",
+		"tsx",
+		"typescriptreact",
 	},
 })
 
@@ -81,6 +85,8 @@ require("lspconfig")["html"].setup({
 		"javascript",
 		"typescript",
 		"vue",
+		"tsx",
+		"typescriptreact",
 	},
 })
 
