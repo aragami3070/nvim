@@ -398,6 +398,9 @@ require("lazy").setup({
 			"jbyuki/instant.nvim",
 		},
 		{
+			"jxm35/livecode.nvim",
+		},
+		{
 			"stevearc/conform.nvim",
 			event = { "BufReadPre", "BufNewFile" },
 			opts = {},

@@ -92,6 +92,7 @@ require('plugins.nvim-dap-ui')
 
 vim.g.Illuminate_useDeprecated = 1
 require("plugins.instant-nvim")
+require("plugins.livecode")
 
 require('plugins.ts-comments-nvim')
 require('plugins.formatting')
