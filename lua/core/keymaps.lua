@@ -180,12 +180,29 @@ vim.keymap.set({"n", "v"}, "<space>va", function() require("scissors").addNewSni
 
 
 
--- NOTE:
+-- NOTE: Added dev docs keymaps
 vim.keymap.set("n", "<space>bc", ":DevdocsOpenCurrent<cr>", { desc = "Open dev docs current"})
 vim.keymap.set("n", "<space>bo", ":DevdocsOpen ", { desc = "Open dev docs (choose lang)"})
 vim.keymap.set("n", "<space>bfc", ":DevdocsOpenCurrentFloat<cr>", { desc = "Open dev docs current(float)"})
 vim.keymap.set("n", "<space>bfo", ":DevdocsOpenFloat ", { desc = "Open dev docs (choose lang)(float)"})
 vim.keymap.set("n", "<space>bt", ":DevdocsToggle", { desc = "Reopen closed dev docs"})
+
+
+
+
+
+-- NOTE: Added nvim-surround keymaps (Add surround)
+vim.keymap.set("n", "<space>hs(", ":normal ysiw(<cr>", { desc = "Add (*) surround word"})
+vim.keymap.set("n", "<space>hs)", ":normal ysiw)<cr>", { desc = "Add ( * ) surround word"})
+vim.keymap.set("n", "<space>hs{", ":normal ysiw{<cr>", { desc = "Add {*} surround word"})
+vim.keymap.set("n", "<space>hs}", ":normal ysiw}<cr>", { desc = "Add { * } surround word"})
+vim.keymap.set("n", "<space>hs[", ":normal ysiw[<cr>", { desc = "Add [*] surround word"})
+vim.keymap.set("n", "<space>hs]", ":normal ysiw]<cr>", { desc = "Add [ * ] surround word"})
+vim.keymap.set("n", "<space>hs$", ":normal ysiw$<cr>", { desc = "Add $*$ surround word"})
+vim.keymap.set("n", "<space>hs'", ":normal ysiw'<cr>", { desc = "Add '*' surround word"})
+vim.keymap.set("n", '<space>hs"', ':normal ysiw"<cr>', { desc = 'Add "*" surround word'})
+vim.keymap.set("n", "<space>hs`", ":normal ysiw`<cr>", { desc = "Add `*` surround word"})
+-- NOTE: Added nvim-surround keymaps (Add surround)
 
 
 
