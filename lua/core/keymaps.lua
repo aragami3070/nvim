@@ -191,7 +191,8 @@ vim.keymap.set("n", "<space>bt", ":DevdocsToggle", { desc = "Reopen closed dev d
 
 
 
--- NOTE: Added nvim-surround keymaps (Add surround word)
+-- NOTE: Added nvim-surround keymaps
+-- NOTE: Add surround word
 vim.keymap.set("n", "<space>hs(", ":normal ysiw(<cr>", { desc = "Add (*) surround word"})
 vim.keymap.set("n", "<space>hs)", ":normal ysiw)<cr>", { desc = "Add ( * ) surround word"})
 vim.keymap.set("n", "<space>hs{", ":normal ysiw{<cr>", { desc = "Add {*} surround word"})
@@ -203,7 +204,7 @@ vim.keymap.set("n", "<space>hs'", ":normal ysiw'<cr>", { desc = "Add '*' surroun
 vim.keymap.set("n", '<space>hs"', ':normal ysiw"<cr>', { desc = 'Add "*" surround word'})
 vim.keymap.set("n", "<space>hs`", ":normal ysiw`<cr>", { desc = "Add `*` surround word"})
 vim.keymap.set("n", "<space>hsy", ":normal ys", { desc = "Add surround (promt) (more variative)"})
--- NOTE: Added nvim-surround keymaps (Delete surround)
+-- NOTE: Delete surround
 vim.keymap.set("n", "<space>hd(", ":normal ds(<cr>", { desc = "Delete (*) surround"})
 vim.keymap.set("n", "<space>hd)", ":normal ds)<cr>", { desc = "Delete ( * ) surround"})
 vim.keymap.set("n", "<space>hd{", ":normal ds{<cr>", { desc = "Delete {*} surround"})
@@ -214,10 +215,13 @@ vim.keymap.set("n", "<space>hd$", ":normal ds$<cr>", { desc = "Delete $*$ surrou
 vim.keymap.set("n", "<space>hd'", ":normal ds'<cr>", { desc = "Delete '*' surround"})
 vim.keymap.set("n", '<space>hd"', ':normal ds"<cr>', { desc = 'Delete "*" surround'})
 vim.keymap.set("n", '<space>hdd', ':normal ds', { desc = 'Delete surround (promt) (more variative)'})
--- NOTE: Added nvim-surround keymaps (Change surround)
+-- NOTE: Change surround
 vim.keymap.set("n", "<space>hc", ":normal cs", { desc = "Change surround (promt)"})
--- NOTE: Added nvim-surround keymaps (Add/Delete/Change)
-
+-- NOTE: Add/Delete/Change tag
+vim.keymap.set("n", "<space>hta", ":normal ySSt<cr>", { desc = "Add tag surround (promt)"})
+vim.keymap.set("n", "<space>htd", ":normal dst<cr>", { desc = "Delete tag surround"})
+vim.keymap.set("n", "<space>htc", ":normal cst<cr>", { desc = "Change tag surround (promt) (don't delete last id, class etc)"})
+vim.keymap.set("n", "<space>htC", ":normal csT<cr>", { desc = "Change tag surround (promt) (delete last id, class etc)"})
 
 
 
