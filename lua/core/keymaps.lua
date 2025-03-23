@@ -191,7 +191,7 @@ vim.keymap.set("n", "<space>bt", ":DevdocsToggle", { desc = "Reopen closed dev d
 
 
 
--- NOTE: Added nvim-surround keymaps (Add surround)
+-- NOTE: Added nvim-surround keymaps (Add surround word)
 vim.keymap.set("n", "<space>hs(", ":normal ysiw(<cr>", { desc = "Add (*) surround word"})
 vim.keymap.set("n", "<space>hs)", ":normal ysiw)<cr>", { desc = "Add ( * ) surround word"})
 vim.keymap.set("n", "<space>hs{", ":normal ysiw{<cr>", { desc = "Add {*} surround word"})
@@ -202,7 +202,16 @@ vim.keymap.set("n", "<space>hs$", ":normal ysiw$<cr>", { desc = "Add $*$ surroun
 vim.keymap.set("n", "<space>hs'", ":normal ysiw'<cr>", { desc = "Add '*' surround word"})
 vim.keymap.set("n", '<space>hs"', ':normal ysiw"<cr>', { desc = 'Add "*" surround word'})
 vim.keymap.set("n", "<space>hs`", ":normal ysiw`<cr>", { desc = "Add `*` surround word"})
--- NOTE: Added nvim-surround keymaps (Add surround)
+-- NOTE: Added nvim-surround keymaps (Delete surround)
+vim.keymap.set("n", "<space>hd(", ":normal ds(<cr>", { desc = "Delete (*) surround"})
+vim.keymap.set("n", "<space>hd)", ":normal ds)<cr>", { desc = "Delete ( * ) surround"})
+vim.keymap.set("n", "<space>hd{", ":normal ds{<cr>", { desc = "Delete {*} surround"})
+vim.keymap.set("n", "<space>hd}", ":normal ds}<cr>", { desc = "Delete { * } surround"})
+vim.keymap.set("n", "<space>hd[", ":normal ds[<cr>", { desc = "Delete [*] surround"})
+vim.keymap.set("n", "<space>hd]", ":normal ds]<cr>", { desc = "Delete [ * ] surround"})
+vim.keymap.set("n", "<space>hd$", ":normal ds$<cr>", { desc = "Delete $*$ surround"})
+vim.keymap.set("n", "<space>hd'", ":normal ds'<cr>", { desc = "Delete '*' surround"})
+vim.keymap.set("n", '<space>hd"', ':normal ds"<cr>', { desc = 'Delete "*" surround'})
 
 
 
