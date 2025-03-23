@@ -202,6 +202,7 @@ vim.keymap.set("n", "<space>hs$", ":normal ysiw$<cr>", { desc = "Add $*$ surroun
 vim.keymap.set("n", "<space>hs'", ":normal ysiw'<cr>", { desc = "Add '*' surround word"})
 vim.keymap.set("n", '<space>hs"', ':normal ysiw"<cr>', { desc = 'Add "*" surround word'})
 vim.keymap.set("n", "<space>hs`", ":normal ysiw`<cr>", { desc = "Add `*` surround word"})
+vim.keymap.set("n", "<space>hsy", ":normal ys", { desc = "Add surround (promt) (more variative)"})
 -- NOTE: Added nvim-surround keymaps (Delete surround)
 vim.keymap.set("n", "<space>hd(", ":normal ds(<cr>", { desc = "Delete (*) surround"})
 vim.keymap.set("n", "<space>hd)", ":normal ds)<cr>", { desc = "Delete ( * ) surround"})
@@ -212,6 +213,10 @@ vim.keymap.set("n", "<space>hd]", ":normal ds]<cr>", { desc = "Delete [ * ] surr
 vim.keymap.set("n", "<space>hd$", ":normal ds$<cr>", { desc = "Delete $*$ surround"})
 vim.keymap.set("n", "<space>hd'", ":normal ds'<cr>", { desc = "Delete '*' surround"})
 vim.keymap.set("n", '<space>hd"', ':normal ds"<cr>', { desc = 'Delete "*" surround'})
+vim.keymap.set("n", '<space>hdd', ':normal ds', { desc = 'Delete surround (promt) (more variative)'})
+-- NOTE: Added nvim-surround keymaps (Change surround)
+vim.keymap.set("n", "<space>hc", ":normal cs", { desc = "Change surround (promt)"})
+-- NOTE: Added nvim-surround keymaps (Add/Delete/Change)
 
 
 
