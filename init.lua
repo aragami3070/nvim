@@ -97,3 +97,6 @@ require("plugins.livecode")
 require('plugins.ts-comments-nvim')
 require('plugins.formatting')
 require('plugins.nvim-devdocs')
+
+-- Add not working because all api not working in my country and deepseek don't have free api now
+-- require('plugins.mcphub')
