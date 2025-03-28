@@ -472,6 +472,7 @@ require("lazy").setup({
 					-- Make sure to set this up properly if you have lazy=true
 					"MeanderingProgrammer/render-markdown.nvim",
 					opts = {
+						enabled = false,
 						file_types = { "markdown", "Avante" },
 					},
 					ft = { "markdown", "Avante" },
