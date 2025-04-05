@@ -147,6 +147,7 @@ vim.keymap.set("n", "<space>ote", ":ObsidianTemplate<CR>", { desc = "Choose Temp
 vim.keymap.set("n", "<space>otod", ":ObsidianToday<CR>", { desc = "Open today note" })
 vim.keymap.set("n", "<space>oton", ":ObsidianToday +", { desc = "Open today+ note" })
 vim.keymap.set("n", "<space>otom", ":ObsidianTomorrow<CR>", { desc = "Open tomorrow note" })
+vim.keymap.set("n", "<space>otg", ":ObsidianTags<CR>", { desc = "Open note tags in Telescope" })
 vim.keymap.set("n", "<space>oye", ":ObsidianYesterday<CR>", { desc = "Open yesterday note" })
 
 
