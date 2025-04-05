@@ -6,6 +6,8 @@ vim.api.nvim_set_keymap('n', '<space>lf', ':Telescope find_files<CR>', { desc = 
 -- NOTE: if you want this grep, you need install ripgrep https://github.com/BurntSushi/ripgrep?tab=readme-ov-file#installation
 vim.api.nvim_set_keymap('n', '<space>lg', ':Telescope live_grep<CR>', {desc = "Find file by text", silent = true })
 vim.api.nvim_set_keymap('n', '<space>ls', ':Telescope lsp_dynamic_workspace_symbols<CR>', {desc = "Find class/method/field", silent = true })
+vim.api.nvim_set_keymap('n', '<space>lr', ':Telescope registers<CR>', {desc = "Pick register value", silent = true })
+vim.api.nvim_set_keymap('n', '<space>lt', ':Telescope<CR>', {desc = "Open Telescope", silent = true })
 vim.api.nvim_set_keymap('n', '<space>gb', ':Telescope git_branches<CR>', {desc = "Choose git branhe", silent = true })
 
 
