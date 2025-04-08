@@ -1,7 +1,7 @@
-vim.g.vsnip_snippet_dirs = { vim.fn.stdpath("config").. "/snippets/" }
-require("luasnip.loaders.from_vscode").lazy_load({ paths = { vim.fn.stdpath("config").. "/snippets/" } })
-require("scissors").setup {
-	snippetDir = vim.fn.stdpath("config").. "/snippets/",
+vim.g.vsnip_snippet_dirs = { vim.fn.stdpath("config") .. "/snippets/" }
+require("luasnip.loaders.from_vscode").lazy_load({ paths = { vim.fn.stdpath("config") .. "/snippets/" } })
+require("scissors").setup({
+	snippetDir = vim.fn.stdpath("config") .. "/snippets/",
 	editSnippetPopup = {
 		height = 0.5, -- relative to the window, between 0-1
 		width = 0.6,
@@ -18,19 +18,22 @@ require("scissors").setup {
 			showHelp = "?",
 		},
 	},
-	telescope = {
-		-- By default, the query only searches snippet prefixes. Set this to
-		-- `true` to also search the body of the snippets.
-		alsoSearchSnippetBody = false,
+	snippetSelection = {
+		picker = "auto", ---@type "auto"|"telescope"|"snacks"|"vim.ui.select"
+		telescope = {
+			-- By default, the query only searches snippet prefixes. Set this to
+			-- `true` to also search the body of the snippets.
+			alsoSearchSnippetBody = false,
 
-		-- accepts the common telescope picker config
-		-- opts = {
-		-- 	layout_strategy = "horizontal",
-		-- 	layout_config = {
-		-- 		horizontal = { width = 0.9 },
-		-- 		preview_width = 0.6,
-		-- 	},
-		-- },
+			-- accepts the common telescope picker config
+			-- opts = {
+			-- 	layout_strategy = "horizontal",
+			-- 	layout_config = {
+			-- 		horizontal = { width = 0.9 },
+			-- 		preview_width = 0.6,
+			-- 	},
+			-- },
+		},
 	},
 
 	-- `none` writes as a minified json file using `vim.encode.json`.
@@ -47,4 +50,4 @@ require("scissors").setup {
 	icons = {
 		scissors = "󰩫",
 	},
-}
+})
