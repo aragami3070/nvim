@@ -98,5 +98,6 @@ require('plugins.ts-comments-nvim')
 require('plugins.formatting')
 require('plugins.nvim-devdocs')
 
+require('macros.csharp-macros')
 -- Add not working because all api not working in my country and deepseek don't have free api now
 -- require('plugins.mcphub')
