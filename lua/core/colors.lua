@@ -32,40 +32,10 @@ vim.api.nvim_set_hl(0, "DapUIPlayPause", { default = true, link = "Constant", fo
 vim.api.nvim_set_hl(0, "DapUIRestartNC", { default = true, link = "Constant", force = true })
 vim.api.nvim_set_hl(0, "DapUIPlayPauseNC", { default = true, link = "Constant", force = true })
 
+-- #98c379
+vim.api.nvim_set_hl(0, "DapUIVariable", { default = true, link = "@variable", force = true })
 
+-- Violet
+vim.api.nvim_set_hl(0, "DapUIValue", { default = true, link = "boolean", force = true })
+vim.api.nvim_set_hl(0, "NvimDapVirtualTextChanged", { default = true, link = "boolean", force = true })
 
--- NvimDapVirtualText xxx links to Comment
--- NvimDapVirtualTextChanged xxx links to DiagnosticVirtualTextWarn
--- NvimDapVirtualTextError xxx links to DiagnosticVirtualTextError
--- NvimDapVirtualTextInfo xxx links to DiagnosticVirtualTextInfo
--- DapUINormal    xxx links to Normal
--- DapUIVariable  xxx links to Normal
--- DapUIScope     xxx links to Identifier
--- DapUIType      xxx links to Type
--- DapUIValue     xxx links to Normal
--- DapUIModifiedValue xxx links to Function
--- DapUIDecoration xxx links to Identifier
--- DapUIThread    xxx links to Identifier
--- DapUIStoppedThread xxx links to Function
--- DapUIFrameName xxx links to Normal
--- DapUISource    xxx links to Define
--- DapUILineNumber xxx links to LineNr
--- DapUIFloatNormal xxx links to NormalFloat
--- DapUIFloatBorder xxx links to Identifier
--- DapUIWatchesEmpty xxx links to PreProc
--- DapUIWatchesValue xxx links to Statement
--- DapUIWatchesError xxx links to PreProc
--- DapUIBreakpointsPath xxx links to Identifier
--- DapUIBreakpointsInfo xxx links to Statement
--- DapUIBreakpointsCurrentLine xxx links to CursorLineNr
--- DapUIBreakpointsLine xxx links to DapUILineNumber
--- DapUIBreakpointsDisabledLine xxx links to Comment
--- DapUICurrentFrameName xxx links to DapUIBreakpointsCurrentLine
--- DapUIUnavailable xxx links to Comment
--- DapUIWinSelect xxx links to Special
--- DapUIEndofBuffer xxx links to EndOfBuffer
--- DapUINormalNC  xxx guibg=#07080d
---                    links to Normal
--- DapUIUnavailableNC xxx guibg=#07080d
---                    links to Comment
--- DapStoppedLine xxx links to Visual
