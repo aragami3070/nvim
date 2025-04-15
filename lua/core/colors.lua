@@ -4,7 +4,6 @@ vim.opt.termguicolors = true
 --vim.cmd.colorscheme("kanagawa-wave")
 
 vim.cmd.colorscheme('one-nvim')
--- Comments next line if you generate config for Kitty
 vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
 vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 vim.api.nvim_set_hl(0, "SignColumn", { bg = "none" })
@@ -28,12 +27,12 @@ vim.api.nvim_set_hl(0, "DapUIStepBack", { default = true, link = "Include", forc
 vim.api.nvim_set_hl(0, "DapUIStepInto", { default = true, link = "Include", force = true })
 vim.api.nvim_set_hl(0, "DapUIStepOver", { default = true, link = "Include", force = true })
 -- Green
+vim.api.nvim_set_hl(0, "DapUIRestart", { default = true, link = "Constant", force = true })
+vim.api.nvim_set_hl(0, "DapUIPlayPause", { default = true, link = "Constant", force = true })
+vim.api.nvim_set_hl(0, "DapUIRestartNC", { default = true, link = "Constant", force = true })
+vim.api.nvim_set_hl(0, "DapUIPlayPauseNC", { default = true, link = "Constant", force = true })
 
 
--- DapUIPlayPauseNC xxx guibg=#07080d links to Repeat
--- DapUIRestartNC xxx guibg=#07080d links to Repeat
--- DapUIPlayPause xxx links to Repeat
--- DapUIRestart   xxx links to Repeat
 
 -- NvimDapVirtualText xxx links to Comment
 -- NvimDapVirtualTextChanged xxx links to DiagnosticVirtualTextWarn
