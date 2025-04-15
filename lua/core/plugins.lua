@@ -420,7 +420,7 @@ require("lazy").setup({
 		},
 		{
 			"ravitemer/mcphub.nvim",
-			enabled = false;
+			enabled = false,
 			dependencies = {
 				"nvim-lua/plenary.nvim", -- Required for Job and HTTP requests
 			},
