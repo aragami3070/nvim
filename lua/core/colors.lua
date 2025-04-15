@@ -19,13 +19,21 @@ vim.api.nvim_set_hl(0, "@variable", { fg = "#98c379" })
 vim.api.nvim_set_hl(0, "DapUIStop", { default = true, link = "WarningMsg", force = true })
 vim.api.nvim_set_hl(0, "DapUIStopNC", { default = true, link = "WarningMsg", force = true })
 -- Blue
+vim.api.nvim_set_hl(0, "DapUIStepOutNC", { default = true, link = "Include", force = true })
+vim.api.nvim_set_hl(0, "DapUIStepBackNC", { default = true, link = "Include", force = true })
+vim.api.nvim_set_hl(0, "DapUIStepIntoNC", { default = true, link = "Include", force = true })
+vim.api.nvim_set_hl(0, "DapUIStepOverNC", { default = true, link = "Include", force = true })
 vim.api.nvim_set_hl(0, "DapUIStepOut", { default = true, link = "Include", force = true })
 vim.api.nvim_set_hl(0, "DapUIStepBack", { default = true, link = "Include", force = true })
 vim.api.nvim_set_hl(0, "DapUIStepInto", { default = true, link = "Include", force = true })
 vim.api.nvim_set_hl(0, "DapUIStepOver", { default = true, link = "Include", force = true })
-
 -- Green
 
+
+-- DapUIPlayPauseNC xxx guibg=#07080d links to Repeat
+-- DapUIRestartNC xxx guibg=#07080d links to Repeat
+-- DapUIPlayPause xxx links to Repeat
+-- DapUIRestart   xxx links to Repeat
 
 -- NvimDapVirtualText xxx links to Comment
 -- NvimDapVirtualTextChanged xxx links to DiagnosticVirtualTextWarn
@@ -54,25 +62,11 @@ vim.api.nvim_set_hl(0, "DapUIStepOver", { default = true, link = "Include", forc
 -- DapUIBreakpointsLine xxx links to DapUILineNumber
 -- DapUIBreakpointsDisabledLine xxx links to Comment
 -- DapUICurrentFrameName xxx links to DapUIBreakpointsCurrentLine
--- DapUIPlayPause xxx links to Repeat
--- DapUIRestart   xxx links to Repeat
 -- DapUIUnavailable xxx links to Comment
 -- DapUIWinSelect xxx links to Special
 -- DapUIEndofBuffer xxx links to EndOfBuffer
 -- DapUINormalNC  xxx guibg=#07080d
 --                    links to Normal
--- DapUIPlayPauseNC xxx guibg=#07080d
---                    links to Repeat
--- DapUIRestartNC xxx guibg=#07080d
---                    links to Repeat
 -- DapUIUnavailableNC xxx guibg=#07080d
 --                    links to Comment
--- DapUIStepOverNC xxx guibg=#07080d
---                    links to Label
--- DapUIStepIntoNC xxx guibg=#07080d
---                    links to Label
--- DapUIStepBackNC xxx guibg=#07080d
---                    links to Label
--- DapUIStepOutNC xxx guibg=#07080d
---                    links to Label
 -- DapStoppedLine xxx links to Visual
