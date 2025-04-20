@@ -3,33 +3,33 @@ require("mason").setup()
 require("mason-lspconfig").setup({
 	ensure_installed = {
 		"lua_ls",
-		"omnisharp",
+		--"omnisharp",
 		"clangd",
-		"texlab",
-		"neocmake",
+		--""texlab",
+		--""neocmake",
 		"markdown_oxide",
-		"ts_ls",
-		"cssls",
-		"html",
-		"tinymist",
-		"asm_lsp",
-		"volar",
+		--""ts_ls",
+		--""cssls",
+		--""html",
+		--""tinymist",
+		--""asm_lsp",
+		--""volar",
 	},
 })
 
 require("mason-nvim-dap").setup({
 	ensure_installed = {
-		"codelldb",
-		"netcoredbg",
+		--""codelldb",
+		--""netcoredbg",
 	},
 })
 
 require("mason-null-ls").setup({
 	ensure_installed = {
 		"clang_format",
-		"csharpier",
-		"prettier",
+		--""csharpier",
+		--""prettier",
 		"stylua",
-		"typstfmt",
+		--""typstfmt",
 	},
 })

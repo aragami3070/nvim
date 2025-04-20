@@ -150,15 +150,6 @@ require("lazy").setup({
 			dependencies = { "nvim-lua/plenary.nvim" },
 		},
 
-		-- Preview markdown (install without yarn or npm)
-		{
-			"iamcco/markdown-preview.nvim",
-			cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-			ft = { "markdown" },
-			build = function()
-				vim.fn["mkdp#util#install"]()
-			end,
-		},
 
 		-- Pairing brackets
 		{ "windwp/nvim-autopairs" },
@@ -369,15 +360,6 @@ require("lazy").setup({
 		{ "ray-x/web-tools.nvim" },
 
 		{
-			"chomosuke/typst-preview.nvim",
-			-- lazy = false, -- or ft = 'typst'
-			ft = "typst",
-			version = "0.3.*",
-			build = function()
-				require("typst-preview").update()
-			end,
-		},
-		{
 			"folke/trouble.nvim",
 			opts = {}, -- for default options, refer to the configuration section for custom setup.
 			cmd = "Trouble",
@@ -393,12 +375,6 @@ require("lazy").setup({
 		{
 			"chrisgrieser/nvim-scissors",
 			dependencies = "nvim-telescope/telescope.nvim",
-		},
-		{
-			"jbyuki/instant.nvim",
-		},
-		{
-			"jxm35/livecode.nvim",
 		},
 		{
 			"stevearc/conform.nvim",
@@ -417,69 +393,6 @@ require("lazy").setup({
 			"pmizio/typescript-tools.nvim",
 			dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
 			opts = {},
-		},
-		{
-			"ravitemer/mcphub.nvim",
-			enabled = false,
-			dependencies = {
-				"nvim-lua/plenary.nvim", -- Required for Job and HTTP requests
-			},
-			-- cmd = "MCPHub", -- lazily start the hub when `MCPHub` is called
-			build = "npm install -g mcp-hub@latest", -- Installs required mcp-hub npm module
-		},
-		{
-			"yetone/avante.nvim",
-			event = "VeryLazy",
-			version = false, -- Never set this value to "*"! Never!
-			enabled = false,
-			opts = {
-				-- add any opts here
-				-- for example
-				provider = "openai",
-				openai = {
-					endpoint = "https://api.deepseek.com",
-					model = "deepseek-chat", -- your desired model (or use gpt-4o, etc.)
-					timeout = 30000, -- Timeout in milliseconds, increase this for reasoning models
-					temperature = 0.7,
-					max_tokens = 8192, -- Increase this to include reasoning tokens (for reasoning models)
-					--reasoning_effort = "medium", -- low|medium|high, only used for reasoning models
-				},
-			},
-			-- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
-			build = "make",
-			-- build = "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false" -- for windows
-			dependencies = {
-				"nvim-treesitter/nvim-treesitter",
-				"stevearc/dressing.nvim",
-				"nvim-lua/plenary.nvim",
-				"MunifTanjim/nui.nvim",
-				{
-					-- support for image pasting
-					"HakonHarnes/img-clip.nvim",
-					event = "VeryLazy",
-					opts = {
-						-- recommended settings
-						default = {
-							embed_image_as_base64 = false,
-							prompt_for_file_name = false,
-							drag_and_drop = {
-								insert_mode = true,
-							},
-							-- required for Windows users
-							use_absolute_path = true,
-						},
-					},
-				},
-				{
-					-- Make sure to set this up properly if you have lazy=true
-					"MeanderingProgrammer/render-markdown.nvim",
-					opts = {
-						enabled = false,
-						file_types = { "markdown", "Avante" },
-					},
-					ft = { "markdown", "Avante" },
-				},
-			},
 		},
 		-- NOTE: DON'T CHANGE  PLS
 		--Debug adapter protocol

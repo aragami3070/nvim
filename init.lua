@@ -43,19 +43,19 @@ require("plugins.todo-comments")
 -- Added nvim-surround
 require("plugins.nvim-surround")
 
-require("plugins.dashboard-nvim")
+--rrequire("plugins.dashboard-nvim")
 
 -- Added nvim-scrollbar plagin
 require("plugins.nvim-scrollbar")
 
 -- Added CMake highlighting
-require("plugins.CMake")
+--rrequire("plugins.CMake")
 
 -- Added rename plugin
 require("plugins.inc-rename")
 
 -- Added pomo plugin (timer)
-require("plugins.pomo-nvim")
+--rrequire("plugins.pomo-nvim")
 
 -- Added notify
 require("plugins.notify")
@@ -65,7 +65,7 @@ require("plugins.gitsigns")
 require("plugins.diffview")
 
 -- Added obsidian.nivm
-require("plugins.obsidian-nvim")
+--rrequire("plugins.obsidian-nvim")
 
 -- Added indent highlighting
 require("plugins.hlchunk-nvim")
@@ -90,12 +90,12 @@ require("plugins.nvim-dap-c++")
 require("plugins.nvim-dap-c#")
 
 vim.g.Illuminate_useDeprecated = 1
-require("plugins.instant-nvim")
-require("plugins.livecode")
+--require("plugins.instant-nvim")
+--rrequire("plugins.livecode")
 
 require("plugins.ts-comments-nvim")
 require("plugins.formatting")
-require("plugins.nvim-devdocs")
+--rrequire("plugins.nvim-devdocs")
 
 require("macros.csharp-macros")
 -- Add not working because all api not working in my country and deepseek don't have free api now
