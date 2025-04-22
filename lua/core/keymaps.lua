@@ -102,6 +102,14 @@ vim.keymap.set('i', ':;', '<Esc>', { desc = "Out from i mode to n" })
 
 
 
+-- NOTE: Added change file encoding keymaps
+vim.keymap.set("n", "<space>ew", ":e ++enc=cp1251<CR>", { desc = "Change file encoding cp1251" })
+vim.keymap.set("n", "<space>eu", ":e ++enc=utf-8<CR>", { desc = "Change file encoding utf-8" })
+
+
+
+
+
 -- NOTE: Added bufferline keymaps
 vim.keymap.set('n', '<Tab>', ':BufferLineCycleNext<CR>', { desc = "Open next file in bufferline" })
 vim.keymap.set('n', '<s-Tab>', ':BufferLineCyclePrev<CR>', { desc = "Open prev file in bufferline" })
