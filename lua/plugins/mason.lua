@@ -12,6 +12,7 @@ require("mason-lspconfig").setup({
 		"cssls",
 		"html",
 		"tinymist",
+		"bashls",
 		"asm_lsp",
 		"volar",
 	},

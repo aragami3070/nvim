@@ -126,6 +126,13 @@ require("lspconfig")["tinymist"].setup({
 	end,
 })
 
+require("lspconfig")["bashls"].setup({
+	capabilities = capabilities,
+	on_attach = function(client, bufnr)
+		navic.attach(client, bufnr)
+	end,
+})
+
 require("lspconfig")["svelte"].setup({
 	capabilities = capabilities,
 	on_attach = function(client, bufnr)
