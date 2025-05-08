@@ -14,6 +14,10 @@
 				"path": "./project-specific/nvim-lua.json"
 			},
 			{
+				"language": "vue",
+				"path": "./vue.json"
+			},
+			{
 				"language": "all",
 				"path": "./ForAll.json"
 			}
