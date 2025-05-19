@@ -72,7 +72,12 @@ require("lazy").setup({
 		{
 			"nvimtools/none-ls.nvim",
 		},
-
+		{
+			"seblyng/roslyn.nvim",
+			ft = "cs",
+			---@module 'roslyn.config'
+			---@type RoslynNvimConfig
+		},
 		-- LSP: Snippets
 		{
 			"L3MON4D3/LuaSnip",

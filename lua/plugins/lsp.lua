@@ -10,13 +10,13 @@ require("lspconfig")["clangd"].setup({
 	end,
 })
 
-require("lspconfig")["omnisharp"].setup({
-	capabilities = capabilities,
-	cmd = { "/home/aragami3070/.local/share/nvim/mason/bin/omnisharp", "--languageserver", "--hostPID", tostring(pid) },
-	on_attach = function(client, bufnr)
-		navic.attach(client, bufnr)
-	end,
-})
+-- require("lspconfig")["omnisharp"].setup({
+-- 	capabilities = capabilities,
+-- 	cmd = { "/home/aragami3070/.local/share/nvim/mason/bin/omnisharp", "--languageserver", "--hostPID", tostring(pid) },
+-- 	on_attach = function(client, bufnr)
+-- 		navic.attach(client, bufnr)
+-- 	end,
+-- })
 
 require("lspconfig")["texlab"].setup({
 	capabilities = capabilities,

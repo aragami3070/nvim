@@ -22,6 +22,7 @@ require("plugins.lsp")
 require("plugins.mason")
 --Added plugin that auto compliting
 require("plugins.cmp")
+require("plugins.roslyn")
 -- Added plugin that add lualine in nvim
 require("plugins.lualine")
 -- Added plugin that add bufferline in nvim
