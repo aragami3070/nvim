@@ -19,7 +19,7 @@ require("mason-lspconfig").setup({
 		"tinymist",
 		"bashls",
 		"asm_lsp",
-		"volar",
+		"vue_ls",
 	},
 })
 
