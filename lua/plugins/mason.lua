@@ -9,6 +9,7 @@ require("mason-lspconfig").setup({
 	ensure_installed = {
 		"lua_ls",
 		-- "roslynv4", -- NOTE: пока ставим руками, мб потом придумаю что-нибудь
+		"rust_analyzer",
 		"clangd",
 		"texlab",
 		"neocmake",
@@ -36,6 +37,7 @@ require("mason-null-ls").setup({
 		"csharpier",
 		"prettier",
 		"stylua",
-		"typstfmt",
+		"ast_grep",
+		"typstyle",
 	},
 })
