@@ -9,7 +9,11 @@
 				"language": "cs",
 				"path": "./cs.json"
 			},
-            {
+			{
+				"language": "rust",
+				"path": "./rust.json"
+			},
+      {
 				"language": "lua",
 				"path": "./project-specific/nvim-lua.json"
 			},
