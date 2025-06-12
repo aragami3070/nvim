@@ -23,6 +23,7 @@ require("plugins.mason")
 --Added plugin that auto compliting
 require("plugins.cmp")
 require("plugins.roslyn")
+require("plugins.crates-nvim")
 require("plugins.supermaven-nvim")
 require("plugins.flash")
 -- Added plugin that add lualine in nvim
