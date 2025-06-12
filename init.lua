@@ -91,6 +91,7 @@ require("plugins.nvim-scissors")
 -- Added nvim-dap
 require("plugins.nvim-dap-c++")
 require("plugins.nvim-dap-c#")
+require("plugins.nvim-dap-rust")
 
 vim.g.Illuminate_useDeprecated = 1
 require("plugins.instant-nvim")
