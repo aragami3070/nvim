@@ -43,6 +43,7 @@ local cmp = require'cmp'
       { name = 'nvim-cmp'},
       -- { name = 'ultisnips' }, -- For ultisnips users.
       -- { name = 'snippy' }, -- For snippy users.
+      { name = 'crates' },
     }, {
       { name = 'buffer' },
     })
