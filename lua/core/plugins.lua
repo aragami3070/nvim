@@ -505,6 +505,14 @@ require("lazy").setup({
 			"supermaven-inc/supermaven-nvim",
 		},
 
+		{
+			"saecki/crates.nvim",
+			event = { "BufRead Cargo.toml" },
+			config = function()
+				require("crates").setup()
+			end,
+		},
+
 		-- NOTE: DON'T CHANGE  PLS
 		--Debug adapter protocol
 		{ "mfussenegger/nvim-dap" },
