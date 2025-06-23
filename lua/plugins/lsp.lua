@@ -122,13 +122,6 @@ require("lspconfig")["bashls"].setup({
 		navic.attach(client, bufnr)
 	end,
 })
-require("lspconfig")["rust_analyzer"].setup({
-	capabilities = capabilities,
-	on_attach = function(client, bufnr)
-		navic.attach(client, bufnr)
-	end,
-})
-
 
 require("lspconfig")["svelte"].setup({
 	capabilities = capabilities,
