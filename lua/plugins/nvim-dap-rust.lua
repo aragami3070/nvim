@@ -24,5 +24,14 @@ local dap = require("dap")
           end,
           cwd = "${workspaceFolder}",
         },
+        {
+          type = "codelldb",
+          request = "attach",
+          name = "Attach to process",
+          pid = function()
+            return vim.fn.input("Input pid: ")
+          end,
+          cwd = "${workspaceFolder}",
+        },
       }
     end
