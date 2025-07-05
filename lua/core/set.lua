@@ -12,7 +12,7 @@ vim.opt.colorcolumn = "80"
 vim.opt.expandtab = true
 
 vim.opt.undofile = true
-vim.opt.spelllang = {"en", "ru"}
+vim.opt.spelllang = { "en", "ru" }
 
 vim.opt.smartindent = true
 vim.opt.mouse = "a"
@@ -24,7 +24,6 @@ vim.opt.syntax = "on"
 vim.opt.pumheight = 5
 
 vim.opt.background = "dark"
-
 
 --Added one column before numbers
 vim.opt.signcolumn = "yes"
@@ -40,17 +39,19 @@ vim.opt.inccommand = "split"
 --Added copy in main buffer
 vim.api.nvim_set_option("clipboard", "unnamedplus")
 
-vim.cmd('autocmd VimLeave * :set guicursor=a:ver25-blinkon10')
+vim.cmd("autocmd VimLeave * :set guicursor=a:ver25-blinkon10")
 
 --Added norelateve number in insert mode
-vim.cmd('autocmd InsertEnter * :set norelativenumber')
-vim.cmd('autocmd InsertLeave * :set relativenumber')
+vim.cmd("autocmd InsertEnter * :set norelativenumber")
+vim.cmd("autocmd InsertLeave * :set relativenumber")
 
 -- Added space = '·', tab = '·'
-vim.opt.listchars = { space = '·', tab = '··'}
+vim.opt.listchars = { space = "·", tab = "··" }
 vim.opt.list = true
 
 vim.notify = require("notify")
 vim.lsp.set_log_level("off")
 vim.opt.conceallevel = 1
 vim.diagnostic.config({ virtual_text = false })
+
+vim.fn.sign_define("DapBreakpoint", { text = "🛑", texthl = "", linehl = "", numhl = "" })
