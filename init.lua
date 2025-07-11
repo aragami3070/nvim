@@ -8,7 +8,7 @@ require("core.keymaps")
 
 --Plugins
 
---Added plugin that add corect
+--Added plugin that add corect highlighting
 require("plugins.treesitter")
 --Added plugin that tree dirs/files
 require("plugins.neo-tree")
