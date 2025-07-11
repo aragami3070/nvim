@@ -352,6 +352,7 @@ require("lazy").setup({
 			event = "VimEnter",
 			dependencies = { { "nvim-tree/nvim-web-devicons" } },
 		},
+
 		{
 			"folke/noice.nvim",
 			event = "VeryLazy",
@@ -375,8 +376,6 @@ require("lazy").setup({
 			event = { "UIEnter" },
 		},
 
-		{ "ray-x/web-tools.nvim" },
-
 		{
 			"chomosuke/typst-preview.nvim",
 			-- lazy = false, -- or ft = 'typst'
@@ -387,12 +386,14 @@ require("lazy").setup({
 				require("typst-preview").update()
 			end,
 		},
+
 		{
 			"folke/trouble.nvim",
 			opts = {}, -- for default options, refer to the configuration section for custom setup.
 			event = "VeryLazy",
 			cmd = "Trouble",
 		},
+
 		{
 			"rachartier/tiny-inline-diagnostic.nvim",
 			event = "VeryLazy", -- Or `LspAttach`
@@ -401,6 +402,7 @@ require("lazy").setup({
 				require("tiny-inline-diagnostic").setup()
 			end,
 		},
+
 		{
 			"chrisgrieser/nvim-scissors",
 			event = "VeryLazy",

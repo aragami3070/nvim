@@ -77,8 +77,6 @@ require("plugins.hlchunk-nvim")
 -- Added Noice config
 require("plugins.noice")
 
--- Added web preview
-require("plugins.web-tools-nvim")
 
 -- Added navic
 require("plugins.nvim-navic")
@@ -100,6 +98,7 @@ require("plugins.ts-comments-nvim")
 require("plugins.formatting")
 require("plugins.nvim-devdocs")
 
+require("macros.rust-macros")
 require("macros.csharp-macros")
 -- Add not working because all api not working in my country and deepseek don't have free api now
 -- require('plugins.mcphub')
