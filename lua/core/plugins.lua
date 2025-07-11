@@ -74,6 +74,7 @@ require("lazy").setup({
 		},
 		{
 			"seblyng/roslyn.nvim",
+			event = "VeryLazy",
 			ft = "cs",
 			---@module 'roslyn.config'
 			---@type RoslynNvimConfig
@@ -212,6 +213,7 @@ require("lazy").setup({
 			"utilyre/barbecue.nvim",
 			name = "barbecue",
 			version = "*",
+			event = "VeryLazy",
 			dependencies = {
 				"SmiteshP/nvim-navic",
 				"nvim-tree/nvim-web-devicons", -- optional dependency
@@ -319,6 +321,7 @@ require("lazy").setup({
 		{
 			"nvim-neo-tree/neo-tree.nvim",
 			branch = "v3.x",
+			event = "VeryLazy",
 			dependencies = {
 				"nvim-lua/plenary.nvim",
 				"nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
@@ -332,6 +335,7 @@ require("lazy").setup({
 
 		{
 			"scalameta/nvim-metals",
+			event = "VeryLazy",
 			dependencies = {
 				"nvim-lua/plenary.nvim",
 				"mfussenegger/nvim-dap",
@@ -377,6 +381,7 @@ require("lazy").setup({
 			"chomosuke/typst-preview.nvim",
 			-- lazy = false, -- or ft = 'typst'
 			ft = "typst",
+			event = "VeryLazy",
 			version = "0.3.*",
 			build = function()
 				require("typst-preview").update()
@@ -385,6 +390,7 @@ require("lazy").setup({
 		{
 			"folke/trouble.nvim",
 			opts = {}, -- for default options, refer to the configuration section for custom setup.
+			event = "VeryLazy",
 			cmd = "Trouble",
 		},
 		{
@@ -397,14 +403,10 @@ require("lazy").setup({
 		},
 		{
 			"chrisgrieser/nvim-scissors",
+			event = "VeryLazy",
 			dependencies = "nvim-telescope/telescope.nvim",
 		},
-		{
-			"jbyuki/instant.nvim",
-		},
-		{
-			"jxm35/livecode.nvim",
-		},
+
 		{
 			"stevearc/conform.nvim",
 			event = { "BufReadPre", "BufNewFile" },
@@ -519,6 +521,7 @@ require("lazy").setup({
 
 		{
 			"mfussenegger/nvim-dap",
+			event = "VeryLazy",
 			recommended = true,
 			desc = "Debugging support. Requires language specific adapters to be configured. (see lang extras)",
 
@@ -553,11 +556,13 @@ require("lazy").setup({
 
 		{
 			"theHamsta/nvim-dap-virtual-text",
+			event = "VeryLazy",
 			opts = {},
 		},
 
 		{
 			"rcarriga/nvim-dap-ui",
+			event = "VeryLazy",
 			dependencies = {
 				"nvim-neotest/nvim-nio",
 				"theHamsta/nvim-dap-virtual-text",
@@ -582,10 +587,12 @@ require("lazy").setup({
 
 		{
 			"nvim-neotest/nvim-nio",
+			event = "VeryLazy",
 		},
 
 		{
 			"jay-babu/mason-nvim-dap.nvim",
+			event = "VeryLazy",
 			dependencies = "mason.nvim",
 			cmd = { "DapInstall", "DapUninstall" },
 			opts = {
