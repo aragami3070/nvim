@@ -1,7 +1,7 @@
 require "nvim-treesitter.configs".setup {
     ensure_installed = {
-        'cpp', 'c_sharp', 'kotlin',
-        'svelte', 'lua', 'python',
+        'cpp', 'c_sharp', 'rust',
+        'vue', 'lua', 'python',
         "markdown", "typst", "asm",
         "html", "css", "javascript",
         "typescript", "dockerfile",
