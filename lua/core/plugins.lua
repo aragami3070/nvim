@@ -381,7 +381,7 @@ require("lazy").setup({
 			-- lazy = false, -- or ft = 'typst'
 			ft = "typst",
 			event = "VeryLazy",
-			version = "0.3.*",
+			-- version = "0.3.*",
 			build = function()
 				require("typst-preview").update()
 			end,
@@ -490,6 +490,7 @@ require("lazy").setup({
 				},
 			},
 		},
+
 		{
 			"folke/flash.nvim",
 			event = "VeryLazy",

@@ -41,7 +41,7 @@ for _, lang in ipairs({ "rust" }) do
 			end,
 			args = function()
 				local args = {}
-				vim.ui.input({ prompt = "args: " }, function(input)
+				vim.ui.input({ prompt = "args: ", completion = "shellcmd" }, function(input)
 					args = vim.split(input, " ")
 				end)
 				return args
