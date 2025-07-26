@@ -22,6 +22,14 @@
 				"path": "./vue.json"
 			},
 			{
+				"language": "javascriptreact",
+				"path": "./reactjs.json"
+			},
+			{
+				"language": "typescriptreact",
+				"path": "./reactts.json"
+			},
+			{
 				"language": "all",
 				"path": "./ForAll.json"
 			}
