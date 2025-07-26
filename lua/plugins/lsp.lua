@@ -53,7 +53,7 @@ require("lspconfig")["lua_ls"].setup({
 	end,
 })
 
--- -- js/typescript
+-- js/typescript
 require("typescript-tools").setup({
 	-- on_attach = function(client, bufnr)
 	-- 	navic.attach(client, bufnr)
@@ -62,6 +62,7 @@ require("typescript-tools").setup({
 		"javascript",
 		"typescript",
 		"vue",
+		"jsx",
 		"tsx",
 		"typescriptreact",
 	},
@@ -80,6 +81,7 @@ require("lspconfig")["cssls"].setup({
 		"javascript",
 		"typescript",
 		"vue",
+		"jsx",
 		"tsx",
 		"typescriptreact",
 	},
@@ -92,6 +94,7 @@ require("lspconfig")["html"].setup({
 		"javascript",
 		"typescript",
 		"vue",
+		"jsx",
 		"tsx",
 		"typescriptreact",
 	},

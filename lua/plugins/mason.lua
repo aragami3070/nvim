@@ -8,7 +8,7 @@ require("mason").setup({
 require("mason-lspconfig").setup({
 	ensure_installed = {
 		"lua_ls",
-		-- "roslynv4", -- NOTE: пока ставим руками, мб потом придумаю что-нибудь
+		-- "roslynv", -- NOTE: пока ставим руками, мб потом придумаю что-нибудь
 		"rust_analyzer",
 		"clangd",
 		"texlab",
@@ -20,7 +20,6 @@ require("mason-lspconfig").setup({
 		"tinymist",
 		"bashls",
 		"asm_lsp",
-		"vue_ls",
 	},
 })
 
