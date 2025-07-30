@@ -97,6 +97,7 @@ vim.g.Illuminate_useDeprecated = 1
 require("plugins.ts-comments-nvim")
 require("plugins.formatting")
 require("plugins.nvim-devdocs")
+require("plugins.venn")
 
 require("macros.rust-macros")
 require("macros.csharp-macros")

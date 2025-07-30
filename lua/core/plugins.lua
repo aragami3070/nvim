@@ -518,6 +518,10 @@ require("lazy").setup({
 			end,
 		},
 
+		{
+			"jbyuki/venn.nvim",
+		},
+
 		-- NOTE: DON'T CHANGE  PLS
 		--Debug adapter protocol
 		{ "mfussenegger/nvim-dap" },
