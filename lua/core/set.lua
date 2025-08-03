@@ -49,9 +49,6 @@ vim.cmd("autocmd InsertLeave * :set relativenumber")
 vim.opt.listchars = { space = "·", tab = "··" }
 vim.opt.list = true
 
-vim.notify = require("notify")
 vim.lsp.set_log_level("off")
 vim.opt.conceallevel = 1
 vim.diagnostic.config({ virtual_text = false })
-
-vim.fn.sign_define("DapBreakpoint", { text = "🛑", texthl = "", linehl = "", numhl = "" })
