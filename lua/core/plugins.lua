@@ -388,6 +388,12 @@ require("lazy").setup({
 		},
 
 		{
+			"ethersync/ethersync-nvim",
+			keys = { { "<leader>et", "<cmd>EthersyncJumpToCursor<cr>" } },
+			lazy = false,
+		},
+
+		{
 			"folke/trouble.nvim",
 			opts = {}, -- for default options, refer to the configuration section for custom setup.
 			event = "VeryLazy",

@@ -139,3 +139,13 @@ require("lspconfig")["pyright"].setup({
 		navic.attach(client, bufnr)
 	end,
 })
+
+require("lspconfig")["rust_analyzer"].setup({
+	settings = {
+		["rust-analyzer"] = {
+			cargo = {
+				features = "all",
+			},
+		},
+	},
+})
