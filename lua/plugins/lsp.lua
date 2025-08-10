@@ -140,12 +140,3 @@ require("lspconfig")["pyright"].setup({
 	end,
 })
 
-require("lspconfig")["rust_analyzer"].setup({
-	settings = {
-		["rust-analyzer"] = {
-			cargo = {
-				features = "all",
-			},
-		},
-	},
-})
