@@ -14,7 +14,6 @@ require("mason-lspconfig").setup({
 		"texlab",
 		"neocmake",
 		"markdown_oxide",
-		"ts_ls",
 		"cssls",
 		"html",
 		"tinymist",
