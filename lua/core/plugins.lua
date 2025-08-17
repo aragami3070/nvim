@@ -143,14 +143,7 @@ require("lazy").setup({
 			"RRethy/vim-illuminate",
 		},
 
-		-- Rename plugin
-		{
-			"smjonas/inc-rename.nvim",
-			cmd = "IncRename",
-		},
-
 		-- Rename in all files plugin
-
 		{
 			"nvim-pack/nvim-spectre",
 			dependencies = { "nvim-lua/plenary.nvim" },
@@ -199,6 +192,7 @@ require("lazy").setup({
 			event = "VeryLazy",
 			enabled = vim.fn.has("nvim-0.10.0") == 1,
 		},
+
 		-- bufferline
 		{ "akinsho/bufferline.nvim" },
 

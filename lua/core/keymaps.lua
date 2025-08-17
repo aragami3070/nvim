@@ -63,13 +63,6 @@ vim.keymap.set("n", "<C-l>", "<C-w>l", { desc = "Go to Right Window", remap = tr
 
 
 
--- NOTE: Added rename keymaps
-vim.keymap.set("n", "<space>nw", ":IncRename ", { desc = "Rename this"})
-
-
-
-
-
 -- NOTE: Added spectre (rename) keymaps
 vim.keymap.set('n', '<leader>so', '<cmd>lua require("spectre").toggle()<CR>', {
     desc = "Toggle Spectre"
@@ -89,7 +82,7 @@ vim.keymap.set('n', '<leader>sp', '<cmd>lua require("spectre").open_file_search(
 
 
 -- NOTE: Added open git tree
-vim.keymap.set("n", "<space>gt", ":Flog<CR>", { desc = "Open git tree" }) -- git tree
+vim.keymap.set("n", "<space>gt", ":Flog<CR>", { desc = "Open git tree" })
 
 
 

@@ -55,9 +55,6 @@ require("plugins.nvim-scrollbar")
 -- Added CMake highlighting
 require("plugins.CMake")
 
--- Added rename plugin
-require("plugins.inc-rename")
-
 -- Added pomo plugin (timer)
 require("plugins.pomo-nvim")
 
@@ -76,7 +73,6 @@ require("plugins.hlchunk-nvim")
 
 -- Added Noice config
 require("plugins.noice")
-
 
 -- Added navic
 require("plugins.nvim-navic")
