@@ -282,12 +282,10 @@ require("lazy").setup({
 			cmd = { "TimerStart", "TimerRepeat", "TimerSession" },
 			dependencies = {
 				-- Optional, but highly recommended if you want to use the "Default" timer
-				"rcarriga/nvim-notify",
+				-- "rcarriga/nvim-notify",
+{ 'nvim-mini/mini.nvim', version = '*' }
 			},
 		},
-
-		-- notify
-		{ "rcarriga/nvim-notify" },
 
 		-- Obsidian.nvim
 		{
@@ -358,7 +356,7 @@ require("lazy").setup({
 				-- OPTIONAL:
 				--   `nvim-notify` is only needed, if you want to use the notification view.
 				--   If not available, we use `mini` as the fallback
-				"rcarriga/nvim-notify",
+				-- "rcarriga/nvim-notify",
 			},
 		},
 

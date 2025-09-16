@@ -58,9 +58,6 @@ require("plugins.CMake")
 -- Added pomo plugin (timer)
 require("plugins.pomo-nvim")
 
--- Added notify
-require("plugins.notify")
-
 -- Added git plugins
 require("plugins.gitsigns")
 require("plugins.diffview")
@@ -97,5 +94,6 @@ require("plugins.venn")
 
 require("macros.rust-macros")
 require("macros.csharp-macros")
+require("macros.cpp-macros")
 -- Add not working because all api not working in my country and deepseek don't have free api now
 -- require('plugins.mcphub')
