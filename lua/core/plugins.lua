@@ -283,7 +283,7 @@ require("lazy").setup({
 			dependencies = {
 				-- Optional, but highly recommended if you want to use the "Default" timer
 				-- "rcarriga/nvim-notify",
-{ 'nvim-mini/mini.nvim', version = '*' }
+				{ "nvim-mini/mini.nvim" },
 			},
 		},
 
@@ -618,12 +618,12 @@ require("lazy").setup({
 	-- automatically check for plugin updates
 	checker = { enabled = true },
 	ui = {
-		border = "rounded"
+		border = "rounded",
 	},
 
 	performance = {
 		cache = {
-			enabled = true
-		}
-	}
+			enabled = true,
+		},
+	},
 })
