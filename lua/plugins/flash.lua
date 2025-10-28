@@ -8,16 +8,6 @@ require("flash").setup({
 		forward = true,
 		-- when `false`, find only matches in the given direction
 		wrap = true,
-		---@type Flash.Pattern.Mode
-		-- Each mode will take ignorecase and smartcase into account.
-		-- * exact: exact match
-		-- * search: regular search
-		-- * fuzzy: fuzzy search
-		-- * fun(str): custom function that returns a pattern
-		--   For example, to only match at the beginning of a word:
-		--   mode = function(str)
-		--     return "\\<" .. str
-		--   end,
 		mode = "exact",
 		-- behave like `incsearch`
 		incremental = false,

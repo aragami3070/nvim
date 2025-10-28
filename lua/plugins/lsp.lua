@@ -1,7 +1,7 @@
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
--- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
+
 vim.lsp.enable({
-	"luals",
+	"lua_ls",
 	"clangd",
 	"texlab",
 	"neocmake",
@@ -12,7 +12,7 @@ vim.lsp.enable({
 	"tinymist",
 	"bashls",
 	"ts_ls",
-	"vue_ls"
+	"millet",
 })
 
 vim.lsp.config("*", {

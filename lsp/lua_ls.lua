@@ -20,9 +20,3 @@ return {
 		},
 	},
 }
-
--- 	capabilities = capabilities,
--- 	on_attach = function(client, bufnr)
--- 		navic.attach(client, bufnr)
--- 	end,
--- })

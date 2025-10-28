@@ -37,13 +37,22 @@ vim.opt.shiftwidth = 4
 
 vim.opt.inccommand = "split"
 --Added copy in main buffer
-vim.api.nvim_set_option("clipboard", "unnamedplus")
+vim.opt.clipboard = "unnamedplus"
 
-vim.cmd("autocmd VimLeave * :set guicursor=a:ver25-blinkon10")
 
---Added norelateve number in insert mode
-vim.cmd("autocmd InsertEnter * :set norelativenumber")
-vim.cmd("autocmd InsertLeave * :set relativenumber")
+-- Autocmds to toggle relative numbers when entering/leaving Insert mode
+vim.api.nvim_create_autocmd({ "InsertEnter" }, {
+    callback = function() vim.opt.relativenumber = false end,
+})
+vim.api.nvim_create_autocmd({ "InsertLeave" }, {
+    callback = function() vim.opt.relativenumber = true end,
+})
+
+-- Automatically remove trailing whitespace on save
+vim.api.nvim_create_autocmd("BufWritePre", {
+    pattern = "*",
+    command = [[%s/\s\+$//e]],
+})
 
 -- Added space = '·', tab = '·'
 vim.opt.listchars = { space = "·", tab = "··" }
