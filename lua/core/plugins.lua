@@ -395,6 +395,7 @@ require("lazy").setup({
 			"rachartier/tiny-inline-diagnostic.nvim",
 			event = "VeryLazy", -- Or `LspAttach`
 			priority = 1000, -- needs to be loaded in first
+			commit = "8e633ccbff87c87ecfad8fe2e10d0869acb67033",
 			config = function()
 				require("tiny-inline-diagnostic").setup()
 			end,
