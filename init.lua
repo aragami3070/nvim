@@ -95,5 +95,6 @@ require("plugins.venn")
 require("macros.rust-macros")
 require("macros.csharp-macros")
 require("macros.cpp-macros")
+require("macros.typst-macros")
 -- Add not working because all api not working in my country and deepseek don't have free api now
 -- require('plugins.mcphub')
