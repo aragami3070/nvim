@@ -377,10 +377,9 @@ require("lazy").setup({
 				require("typst-preview").update()
 			end,
 		},
-
 		{
-			"ethersync/ethersync-nvim",
-			keys = { { "<leader>et", "<cmd>EthersyncJumpToCursor<cr>" } },
+			"teamtype/teamtype-nvim",
+			keys = { { "<leader>et", "<cmd>TeamtypeJumpToCursor<cr>" } },
 			lazy = false,
 		},
 
