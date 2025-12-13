@@ -13,6 +13,7 @@ vim.lsp.enable({
 	"bashls",
 	"ts_ls",
 	"millet",
+    "ruby_lsp"
 })
 
 vim.lsp.config("*", {
