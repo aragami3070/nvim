@@ -1,4 +1,4 @@
-require "nvim-treesitter.configs".setup {
+require "nvim-treesitter".setup {
     ensure_installed = {
         'cpp', 'c_sharp', 'rust',
         'vue', 'lua', 'python',

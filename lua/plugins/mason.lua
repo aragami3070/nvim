@@ -18,7 +18,6 @@ require("mason-lspconfig").setup({
 		"html",
 		"tinymist",
 		"bashls",
-		"asm_lsp",
 	},
 })
 
@@ -32,7 +31,7 @@ require("mason-nvim-dap").setup({
 require("mason-null-ls").setup({
 	ensure_installed = {
 		"clang_format",
-		"csharpier",
+		-- "csharpier",
 		"prettier",
 		"stylua",
 		"ast_grep",
