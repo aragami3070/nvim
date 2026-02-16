@@ -135,6 +135,8 @@ require("lazy").setup({
 		{
 			"nvim-treesitter/nvim-treesitter",
 			build = ":TSUpdate",
+            branch = "master",
+            version = "0.10.0"
 		},
 
 		-- Underscore selected function/var/etc in code
