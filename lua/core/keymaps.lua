@@ -1,9 +1,20 @@
 -- NOTE: Added leader button == space
 vim.g.mapleader = " "
 
+
+
+
+
+-- NOTE: Add Lazy update keymap
+vim.api.nvim_set_keymap('n', '<space>ul', ':Lazy update<CR>', { desc = "Update package"})
+vim.api.nvim_set_keymap('n', '<space>uo', ':Lazy<CR>', { desc = "Open Lazy"})
+
+
+
+
+
 -- NOTE: Added Telescope keymaps
 vim.api.nvim_set_keymap('n', '<space>lf', ':Telescope find_files<CR>', { desc = "Find file by name", noremap = true, silent = true })
--- NOTE: if you want this grep, you need install ripgrep https://github.com/BurntSushi/ripgrep?tab=readme-ov-file#installation
 vim.api.nvim_set_keymap('n', '<space>lg', ':Telescope live_grep<CR>', {desc = "Find file by text", silent = true })
 vim.api.nvim_set_keymap('n', '<space>ls', ':Telescope lsp_dynamic_workspace_symbols<CR>', {desc = "Find class/method/field", silent = true })
 vim.api.nvim_set_keymap('n', '<space>lr', ':Telescope registers<CR>', {desc = "Pick register value", silent = true })
@@ -168,9 +179,6 @@ vim.keymap.set("n", "<space>dsc", ":CMakeDebug<CR>", { desc = "Start CMake debug
 vim.keymap.set("n", "<space>zd", ":Trouble diagnostics toggle focus=true<cr>", { desc = "Diagnostics (Trouble)"})
 vim.keymap.set("n", "<space>zbd", ":Trouble diagnostics toggle filter.buf=0 focus=true<cr>", { desc = "Buffer Diagnostics (Trouble)"})
 vim.keymap.set("n", "<space>zs", ":Trouble symbols toggle focus=true<cr>", { desc = "Symbols (Trouble)"})
--- vim.keymap.set("n", "<space>zls", ":Trouble lsp toggle focus=false win.position=right<cr>", { desc = "LSP Definitions/references/... (Trouble)"})
--- vim.keymap.set("n", "<space>zll", ":Trouble loclist toggle<cr>", { desc = "Location List (Trouble)"})
--- vim.keymap.set("n", "<space>zq", ":Trouble qflist toggle<cr>", { desc = "Quickfix List (Trouble)"})
 
 
 
@@ -231,40 +239,40 @@ vim.keymap.set("n", "<space>htC", ":normal csT<cr>", { desc = "Change tag surrou
 
 
 -- NOTE: Added dap keymaps
-vim.keymap.set("n", "<space>db", ":DapToggleBreakpoint<CR>", { desc = "Do break point" }) -- add|delete breakpoint on line 
-vim.keymap.set("n", "<space>dc", ":DapContinue<CR>", { desc = "Start connect to debug" }) -- даёт выбор: 1) запустить debug файл или 2)подключиться к процессу. Я тестил первый вариант, работает хорошо, второй не пробовал, хз как оно работет 
+vim.keymap.set("n", "<space>db", ":DapToggleBreakpoint<CR>", { desc = "Do break point" }) -- add|delete breakpoint on line
+vim.keymap.set("n", "<space>dc", ":DapContinue<CR>", { desc = "Start connect to debug" }) -- даёт выбор: 1) запустить debug файл или 2)подключиться к процессу. Я тестил первый вариант, работает хорошо, второй не пробовал, хз как оно работет
 -- NOTE:
--- Как использовать первый вариант DapContinue на примере c++: 
--- 1)создаем debug файл: 
--- g++ --debug test.cpp test 
--- 2)заходим в nvim ставим breakpoint-ы через Space + d + b 
+-- Как использовать первый вариант DapContinue на примере c++:
+-- 1)создаем debug файл:
+-- g++ --debug test.cpp test
+-- 2)заходим в nvim ставим breakpoint-ы через Space + d + b
 -- 3)запускаем debug файл, созданный выше
--- нажимаем Space + d + c 
+-- нажимаем Space + d + c
 -- открывается меню выбора: 1) запустить debug файл или 2)подключиться к процессу.
--- вводим 1 в command line 
+-- вводим 1 в command line
 -- потом нужно прописать название debug файла (там автоматически прописывается путь до открытой директории)
--- после этого, если никаких ошибок не допущено, то откроится dap ui и начнется процесс дебага, аля vscode 
+-- после этого, если никаких ошибок не допущено, то откроится dap ui и начнется процесс дебага, аля vscode
 
 -- NOTE: те keymap, которые не тестил закоментированы
 
--- vim.keymap.set("n", "<space>da", function() require("dap").continue({ before = get_args }) end) -- "Run with Args" 
+-- vim.keymap.set("n", "<space>da", function() require("dap").continue({ before = get_args }) end) -- "Run with Args"
 -- vim.keymap.set("n","<leader>dC", function() require("dap").run_to_cursor() end)  -- "Run to Cursor"
-vim.keymap.set("n", "<leader>di", function() require("dap").step_into() end, {desc = "DAP step into"})  -- "Step Into" 
--- vim.keymap.set("n", "<leader>dj", function() require("dap").down() end)  -- "Down" 
--- vim.keymap.set("n", "<leader>dk", function() require("dap").up() end)  -- "Up" 
--- vim.keymap.set("n", "<leader>dg", function() require("dap").goto_() end)  -- "Go to Line (No Execute)" 
--- vim.keymap.set("n", "<leader>dl", function() require("dap").run_last() end)  -- "Run Last" 
-vim.keymap.set("n", "<leader>do", function() require("dap").step_out() end, {desc = "DAP step out"})  -- "Step Out" 
-vim.keymap.set("n", "<leader>dO", function() require("dap").step_over() end, {desc = "DAP step over"})  -- Step Over" 
--- vim.keymap.set("n", "<leader>dp", function() require("dap").pause() end)  -- "Pause" 
--- vim.keymap.set("n", "<leader>dr", function() require("dap").repl.toggle() end)  -- "Toggle REPL" 
--- vim.keymap.set("n", "<leader>ds", function() require("dap").session() end)  -- "Session" 
--- vim.keymap.set("n", "<leader>dt", function() require("dap").terminate() end)  -- "Terminate" 
+vim.keymap.set("n", "<leader>di", function() require("dap").step_into() end, {desc = "DAP step into"})  -- "Step Into"
+-- vim.keymap.set("n", "<leader>dj", function() require("dap").down() end)  -- "Down"
+-- vim.keymap.set("n", "<leader>dk", function() require("dap").up() end)  -- "Up"
+-- vim.keymap.set("n", "<leader>dg", function() require("dap").goto_() end)  -- "Go to Line (No Execute)"
+-- vim.keymap.set("n", "<leader>dl", function() require("dap").run_last() end)  -- "Run Last"
+vim.keymap.set("n", "<leader>do", function() require("dap").step_out() end, {desc = "DAP step out"})  -- "Step Out"
+vim.keymap.set("n", "<leader>dO", function() require("dap").step_over() end, {desc = "DAP step over"})  -- Step Over"
+-- vim.keymap.set("n", "<leader>dp", function() require("dap").pause() end)  -- "Pause"
+-- vim.keymap.set("n", "<leader>dr", function() require("dap").repl.toggle() end)  -- "Toggle REPL"
+-- vim.keymap.set("n", "<leader>ds", function() require("dap").session() end)  -- "Session"
+-- vim.keymap.set("n", "<leader>dt", function() require("dap").terminate() end)  -- "Terminate"
 
 
 -- NOTE: Added dap ui keymaps
 vim.keymap.set("n", "<space>du", function() require("dapui").toggle({ }) end, { desc = "DAP UI open"}) -- open|close Dap UI
 -- vim.keymap.set("n", "<leader>de", function() require("dapui").eval() end) -- хз что делает, но там откуда брал код оно было
--- vim.keymap.set("n", "<leader>dw", function() require("dap.ui.widgets").hover() end)  -- "Widgets" 
+-- vim.keymap.set("n", "<leader>dw", function() require("dap.ui.widgets").hover() end)  -- "Widgets"
 
 

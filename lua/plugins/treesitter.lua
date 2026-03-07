@@ -1,14 +1,10 @@
 require("nvim-treesitter.configs").setup({
     ensure_installed = {
         "cpp",
-        "c_sharp",
         "rust",
-        "vue",
         "lua",
-        "python",
         "markdown",
         "typst",
-        "asm",
         "html",
         "css",
         "javascript",
@@ -16,10 +12,8 @@ require("nvim-treesitter.configs").setup({
         "dockerfile",
         "bash",
         "json5",
-        "cmake",
-        "bibtex",
         "markdown_inline",
-    }, --, 'latex' },
+    },
     sync_install = false,
     highlight = {
         enable = true,
@@ -27,6 +21,5 @@ require("nvim-treesitter.configs").setup({
     },
     indent = { enable = true },
     auto_install = true,
-    -- HACK: latex work
     ignore_install = { "latex" }, -- List of parsers to ignore installing
 })

@@ -11,10 +11,7 @@ local function fix_colors()
     -- NOTE:(nrydanov) Temporary treesitter fix
     set(0, "@variable", { fg = "#98c379" })
 
-    -- links to StorageClass
-
     -- HACK: fix dap colors
-
     -- Red
     set(0, "DapUIStop", { default = false, link = "WarningMsg", force = true })
     set(0, "DapUIStopNC", { default = false, link = "WarningMsg", force = true })

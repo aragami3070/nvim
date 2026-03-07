@@ -1,100 +1,79 @@
--- Added leader button == space
+-- Add leader button == space
 vim.g.mapleader = " "
 
-require("core.plugins")
+require("core.lazy-install")
 require("core.set")
 require("core.colors")
 require("core.keymaps")
 
---Plugins
-
---Added plugin that add corect highlighting
+-- Plugins
+-- Add corect highlighting
 require("plugins.treesitter")
---Added plugin that tree dirs/files
+-- Add tree dirs/files
 require("plugins.neo-tree")
---Added plugin that find file by name
+-- Add find file by name
 require("plugins.telescope")
---Added plugin
+-- Add plugin
 require("plugins.nvim-autopairs")
---Added lsp plugin
+-- Add lsp plugin
 require("plugins.lsp")
---Added plugin that auto downloading language server (code language)
+-- Add auto downloading language server (code language)
 require("plugins.mason")
---Added plugin that auto compliting
+-- Add auto compliting
 require("plugins.cmp")
 require("plugins.roslyn")
 require("plugins.crates-nvim")
-require("plugins.supermaven-nvim")
 require("plugins.flash")
--- Added plugin that add lualine in nvim
+-- Add lualine in nvim
 require("plugins.lualine")
--- Added plugin that add bufferline in nvim
+-- Add bufferline in nvim
 require("plugins.bufferline")
 
--- Added plugin that highlighting hex color
+-- Add highlighting hex color
 require("plugins.colorizer")
 -- #60f
--- Added plugin that open terminal in nvim
+--  Add open terminal in nvim
 require("plugins.toggleterm")
--- TODO: do todo com
--- FIX: do fix com
--- WARNING: do warning com
--- NOTE: do note com
--- HACK: do hack com
--- PERF: do perf com
-require("plugins.todo-comments")
 
--- Added nvim-surround
+require("plugins.todo-comments")
+require("plugins.ts-comments-nvim")
+
+-- Add nvim-surround
 require("plugins.nvim-surround")
 
-require("plugins.dashboard-nvim")
-
--- Added nvim-scrollbar plagin
-require("plugins.nvim-scrollbar")
-
--- Added CMake highlighting
-require("plugins.CMake")
-
--- Added pomo plugin (timer)
+-- Add pomo plugin (timer)
 require("plugins.pomo-nvim")
 
--- Added git plugins
+-- Add git plugins
 require("plugins.gitsigns")
 require("plugins.diffview")
 
--- Added obsidian.nivm
+-- Add obsidian.nivm
 require("plugins.obsidian-nvim")
 
--- Added indent highlighting
+-- Add indent highlighting
 require("plugins.hlchunk-nvim")
 
--- Added Noice config
+-- Add Noice config
 require("plugins.noice")
 
--- Added navic
-require("plugins.nvim-navic")
-
--- Added tiny-inline-diagnostic
+-- Add tiny-inline-diagnostic
 require("plugins.tiny-inline-diagnostic")
 
--- Added nvim-scissors (custom snippets)
+-- Add nvim-scissors (custom snippets)
 require("plugins.nvim-scissors")
 
--- Added nvim-dap
+require("plugins.formatting")
+require("plugins.venn")
+
+-- Add nvim-dap configs
 require("plugins.nvim-dap-c++")
 require("plugins.nvim-dap-c#")
 require("plugins.nvim-dap-rust")
 
 vim.g.Illuminate_useDeprecated = 1
 
-require("plugins.ts-comments-nvim")
-require("plugins.formatting")
-require("plugins.nvim-devdocs")
-require("plugins.venn")
-
 require("macros.rust-macros")
 require("macros.csharp-macros")
 require("macros.cpp-macros")
 require("macros.typst-macros")
--- Add not working because all api not working in my country and deepseek don't have free api now
--- require('plugins.mcphub')

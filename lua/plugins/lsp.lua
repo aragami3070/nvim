@@ -8,12 +8,9 @@ vim.lsp.enable({
 	"cssls",
 	"html",
 	"markdown_oxide",
-	"asm_lsp",
 	"tinymist",
 	"bashls",
 	"ts_ls",
-	"millet",
-    "ruby_lsp"
 })
 
 vim.lsp.config("*", {

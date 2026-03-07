@@ -10,6 +10,7 @@ require("conform").setup({
 		ts = { "prettier" },
 		html = { "prettier" },
 		css = { "prettier" },
+		xml = { "xmlformatter" },
 	},
 	formatters = {
 		clang_format = {
