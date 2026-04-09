@@ -304,6 +304,7 @@ require("lazy").setup({
         {
             "chrisgrieser/nvim-scissors",
             event = "VeryLazy",
+            commit = "855ce6b",
             dependencies = "nvim-telescope/telescope.nvim",
         },
 

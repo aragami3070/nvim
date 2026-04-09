@@ -59,7 +59,10 @@ vim.opt.listchars = { space = "·", tab = "··" }
 vim.opt.list = true
 
 vim.notify = require("mini")
-vim.lsp.set_log_level("off")
+
+vim.lsp.log.set_level("off")
+vim.deprecate = function() end
+
 vim.opt.conceallevel = 1
 vim.diagnostic.config({ virtual_text = false })
 
