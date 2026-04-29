@@ -85,7 +85,7 @@ require("lazy").setup({
             "nvim-treesitter/nvim-treesitter",
             build = ":TSUpdate",
             branch = "master",
-            version = "0.10.0",
+            -- version = "0.10.0",
         },
 
         -- Underscore selected function/var/etc in code
@@ -166,11 +166,11 @@ require("lazy").setup({
                         { "z", group = "Fold" },
                         { "<space>cl", desc = "Comment line" },
                         { "<space>c", desc = "Comment highlighted lines" },
-                        { "<space>pd", desc = "Preview Definition" },
-                        { "<space>pt", desc = "Preview Type Definition" },
-                        { "<space>pi", desc = "Preview Implementation" },
-                        { "<space>pr", desc = "Preview References" },
-                        { "<space>pc", desc = "Close Previews" },
+                        { "<space>p", group = "Oil" },
+                        { "<space>pc", desc = "Close oil and restore original buffer" },
+                        { "<space>pp", desc = "Open the entry under the cursor in a preview window, or close the preview window if already open" },
+                        { "<space>ps", desc = "Open the entry under the cursor { vertical = true }" },
+                        { "<space>pl", desc = "Refresh current directory list" },
                         {
                             "<leader>w",
                             group = "windows",
@@ -243,12 +243,60 @@ require("lazy").setup({
             },
         },
 
+        {
+            "stevearc/oil.nvim",
+            ---@module 'oil'
+            ---@type oil.SetupOpts
+            opts = {},
+            -- Optional dependencies
+            dependencies = { { "nvim-mini/mini.icons", opts = {} } },
+            -- dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if you prefer nvim-web-devicons
+            -- Lazy loading is not recommended because it is very tricky to make it work correctly in all situations.
+            lazy = false,
+        },
+
         -- Colorscheme
         { "aragami3070/one-nvim" },
         { "EdenEast/nightfox.nvim" },
 
         {
             "scalameta/nvim-metals",
+            ft = { "scala", "sbt", "java" },
+            opts = function()
+                local metals_config = require("metals").bare_config()
+
+                metals_config.init_options.statusBarProvider = "off"
+
+                metals_config.settings = {
+                    verboseCompilation = true,
+                    showImplicitArguments = true,
+                    showImplicitConversionsAndClasses = true,
+                    showInferredType = true,
+                    superMethodLensesEnabled = true,
+                    excludedPackages = {
+                        "akka.actor.typed.javadsl",
+                        "org.apache.pekko.actor.typed.javadsl",
+                        "com.github.swagger.akka.javadsl",
+                    },
+                    testUserInterface = "Test Explorer",
+                }
+
+                metals_config.on_attach = function(client, bufnr)
+                    -- require("metals").setup_dap()
+                end
+
+                return metals_config
+            end,
+            config = function(self, metals_config)
+                local nvim_metals_group = vim.api.nvim_create_augroup("nvim-metals", { clear = true })
+                vim.api.nvim_create_autocmd("FileType", {
+                    pattern = self.ft,
+                    callback = function()
+                        require("metals").initialize_or_attach(metals_config)
+                    end,
+                    group = nvim_metals_group,
+                })
+            end,
             event = "VeryLazy",
             dependencies = {
                 "nvim-lua/plenary.nvim",
@@ -315,30 +363,6 @@ require("lazy").setup({
         },
 
         {
-            "pmizio/typescript-tools.nvim",
-            dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
-            opts = {},
-        },
-
-        {
-            -- support for image pasting
-            "HakonHarnes/img-clip.nvim",
-            event = "VeryLazy",
-            opts = {
-                -- recommended settings
-                default = {
-                    embed_image_as_base64 = false,
-                    prompt_for_file_name = false,
-                    drag_and_drop = {
-                        insert_mode = true,
-                    },
-                    -- required for Windows users
-                    use_absolute_path = true,
-                },
-            },
-        },
-
-        {
             "folke/flash.nvim",
             event = "VeryLazy",
             ---@type Flash.Config
@@ -366,7 +390,7 @@ require("lazy").setup({
         },
 
         -- NOTE: DON'T CHANGE  PLS
-        --Debug adapter protocol
+        -- Debug adapter protocol
         { "mfussenegger/nvim-dap" },
 
         {

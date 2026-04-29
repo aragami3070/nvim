@@ -11,6 +11,7 @@ require("core.keymaps")
 require("plugins.treesitter")
 -- Add tree dirs/files
 require("plugins.neo-tree")
+require("plugins.oil")
 -- Add find file by name
 require("plugins.telescope")
 -- Add plugin
