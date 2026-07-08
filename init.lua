@@ -42,9 +42,6 @@ require("plugins.ts-comments-nvim")
 -- Add nvim-surround
 require("plugins.nvim-surround")
 
--- Add pomo plugin (timer)
-require("plugins.pomo-nvim")
-
 -- Add git plugins
 require("plugins.gitsigns")
 require("plugins.diffview")

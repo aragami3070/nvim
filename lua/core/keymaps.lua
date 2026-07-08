@@ -19,6 +19,7 @@ vim.api.nvim_set_keymap('n', '<space>lg', ':Telescope live_grep<CR>', {desc = "F
 vim.api.nvim_set_keymap('n', '<space>ls', ':Telescope lsp_dynamic_workspace_symbols<CR>', {desc = "Find class/method/field", silent = true })
 vim.api.nvim_set_keymap('n', '<space>lr', ':Telescope registers<CR>', {desc = "Pick register value", silent = true })
 vim.api.nvim_set_keymap('n', '<space>lt', ':Telescope<CR>', {desc = "Open Telescope", silent = true })
+vim.api.nvim_set_keymap('n', '<space>ls', ':Telescope git_status<CR>', {desc = "Find file from git status", silent = true })
 vim.api.nvim_set_keymap('n', '<space>gb', ':Telescope git_branches<CR>', {desc = "Choose git branhe", silent = true })
 
 
@@ -142,21 +143,6 @@ vim.keymap.set("n", "<space>gh", ":DiffviewFileHistory<CR>", { desc = "Open file
 -- NOTE: Added Noice Last/History message
 vim.keymap.set("n", "<space>.l", ":NoiceLast<CR>", { desc = "Noice Last message" })
 vim.keymap.set("n", "<space>.h", ":NoiceHistory<CR>", { desc = "Noice History message" })
-
-
-
-
-
--- NOTE: Added pomo (timer) keymaps
-vim.keymap.set("n", "<space>tsed", ":TimerSession pomodoro<CR>", { desc = "Start Timer Session (defualt)" })
-vim.keymap.set("n", "<space>tsel", ":TimerSession customPomodoroForLearn<CR>", { desc = "Start Timer Session (customPomodoroForLearn)" })
-vim.keymap.set("n", "<space>tsew", ":TimerSession customPomodoroForWork<CR>", { desc = "Start Timer Session (customPomodoroForWork)" })
-vim.keymap.set("n", "<space>tsta", ":TimerStart", { desc = "Timer Start (choose time)" })
-vim.keymap.set("n", "<space>tp", ":TimerPause<CR>", { desc = "Timer Pause" })
-vim.keymap.set("n", "<space>tc", ":TimerResume<CR>", { desc = "Timer Continue" })
-vim.keymap.set("n", "<space>tsh", ":TimerShow<CR>", { desc = "Timer Show" })
-vim.keymap.set("n", "<space>tsto", ":TimerStop<CR>", { desc = "Timer Stop" })
-vim.keymap.set("n", "<space>th", ":TimerHide<CR>", { desc = "Timer Hide" })
 
 
 

@@ -154,7 +154,6 @@ require("lazy").setup({
                         { "[", group = "Prev" },
                         { "]", group = "Next" },
                         { "<space>l", group = "Find file by" },
-                        { "<space>t", group = "Timer" },
                         { "<space>o", group = "Obsidian" },
                         { "<space>z", group = "Trouble" },
                         { "<space>oto", group = "Today/Tomorrow" },
@@ -168,7 +167,10 @@ require("lazy").setup({
                         { "<space>c", desc = "Comment highlighted lines" },
                         { "<space>p", group = "Oil" },
                         { "<space>pc", desc = "Close oil and restore original buffer" },
-                        { "<space>pp", desc = "Open the entry under the cursor in a preview window, or close the preview window if already open" },
+                        {
+                            "<space>pp",
+                            desc = "Open the entry under the cursor in a preview window, or close the preview window if already open",
+                        },
                         { "<space>ps", desc = "Open the entry under the cursor { vertical = true }" },
                         { "<space>pl", desc = "Refresh current directory list" },
                         {
@@ -197,18 +199,7 @@ require("lazy").setup({
             end,
         },
 
-        -- pomo (timer) plugin
-        {
-            "epwalsh/pomo.nvim",
-            version = "*", -- Recommended, use latest release instead of latest commit
-            lazy = true,
-            cmd = { "TimerStart", "TimerRepeat", "TimerSession" },
-            dependencies = {
-                -- Optional, but highly recommended if you want to use the "Default" timer
-                -- "rcarriga/nvim-notify",
-                { "nvim-mini/mini.nvim" },
-            },
-        },
+        { "nvim-mini/mini.nvim" },
 
         -- Obsidian.nvim
         {
