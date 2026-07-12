@@ -16,6 +16,7 @@ require("conform").setup({
         css = { "prettier" },
         xml = { "xmlformatter" },
         python = { "black" },
+        toml = { "taplo" },
     },
     formatters = {
         clang_format = {
