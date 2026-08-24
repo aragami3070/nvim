@@ -4,6 +4,11 @@ vim.g.mapleader = " "
 
 
 
+-- NOTE: Add select rust features
+vim.keymap.set("n", "<space>tf", function() require("utils.rust_features").select() end, { desc = "Rust: select Cargo features" })
+
+
+
 
 -- NOTE: Add Lazy update keymap
 vim.api.nvim_set_keymap('n', '<space>ul', ':Lazy update<CR>', { desc = "Update package"})

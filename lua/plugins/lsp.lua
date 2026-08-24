@@ -4,7 +4,12 @@ vim.lsp.config("*", {
     capabilities = capabilities,
 })
 
+vim.lsp.config("rust_analyzer", {
+    before_init = require("utils.rust_features").before_init,
+})
+
 vim.lsp.enable({
+    "rust_analyzer",
     "lua_ls",
     "clangd",
     "texlab",
